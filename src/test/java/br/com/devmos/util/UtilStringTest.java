@@ -30,5 +30,5 @@ public class UtilStringTest {
 		String removedCharacter = UtilString.removeCharacter(NAME, 'R');
 		assertEquals("agnar", removedCharacter);
 	}
-
+	
 }

@@ -8,4 +8,13 @@ public class UtilNumbers {
 		var random = new Random();
 		return random.nextInt((max - min) + 1) + min;
 	}
+	
+	public static String geraSenhaNumerica(int tamanho) {
+		var random = new Random();
+		StringBuilder sb = new StringBuilder();
+		for(var i = 0; i < tamanho; i++) {
+			sb.append(random.nextInt(10));
+		}
+		return sb.toString();
+	}
 }
