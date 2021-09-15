@@ -17,4 +17,13 @@ public class UtilNumbers {
 		}
 		return sb.toString();
 	}
+	
+	public static String geraSenhaLetras(int tamanho) {
+		var random = new Random();
+		StringBuilder sb = new StringBuilder();
+		for(var i = 0; i < tamanho; i++) {
+			sb.append((char) (random.nextInt(26) + 'a'));
+		}
+		return sb.toString();
+	}
 }
