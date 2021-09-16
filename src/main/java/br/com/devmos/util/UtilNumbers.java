@@ -1,5 +1,7 @@
 package br.com.devmos.util;
 
+import java.util.Comparator;
+import java.util.List;
 import java.util.Random;
 
 public class UtilNumbers {
@@ -25,5 +27,9 @@ public class UtilNumbers {
 			sb.append((char) (random.nextInt(26) + 'a'));
 		}
 		return sb.toString();
+	}
+	
+	public static int getMinNumber(List<Integer> numbers) {
+		return numbers.stream().min(Comparator.naturalOrder()).orElse(Integer.MIN_VALUE);
 	}
 }
