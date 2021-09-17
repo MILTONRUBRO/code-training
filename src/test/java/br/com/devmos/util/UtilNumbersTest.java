@@ -43,4 +43,11 @@ public class UtilNumbersTest {
 		int minNumber = UtilNumbers.getMinNumber(numbers);
 		assertEquals(Integer.MIN_VALUE, minNumber);
 	}
+	
+	@Test
+	public void testGetMaxNumber() {
+		var numbers = List.of(6,87,78,3,4);
+		int maxNumber = UtilNumbers.getMaxNumber(numbers);
+		assertEquals(87, maxNumber);
+	}
 }

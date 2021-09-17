@@ -32,4 +32,8 @@ public class UtilNumbers {
 	public static int getMinNumber(List<Integer> numbers) {
 		return numbers.stream().min(Comparator.naturalOrder()).orElse(Integer.MIN_VALUE);
 	}
+	
+	public static int getMaxNumber(List<Integer> numbers) {
+		return numbers.stream().max(Comparator.naturalOrder()).orElse(Integer.MAX_VALUE);
+	}
 }
