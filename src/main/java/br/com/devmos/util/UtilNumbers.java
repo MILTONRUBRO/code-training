@@ -36,4 +36,8 @@ public class UtilNumbers {
 	public static int getMaxNumber(List<Integer> numbers) {
 		return numbers.stream().max(Comparator.naturalOrder()).orElse(Integer.MAX_VALUE);
 	}
+	
+	public static double getAverage(List<Integer> numbers) {
+		return numbers.stream().mapToInt(i -> i).average().getAsDouble();
+	}
 }

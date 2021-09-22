@@ -50,4 +50,13 @@ public class UtilNumbersTest {
 		int maxNumber = UtilNumbers.getMaxNumber(numbers);
 		assertEquals(87, maxNumber);
 	}
+	
+	@Test
+	public void testGetAverage() {
+		var numbers = List.of(6,2,4,7,1);
+		double average = UtilNumbers.getAverage(numbers);
+		assertEquals(4.0, average, 0.001);
+	}
+	
+	
 }
