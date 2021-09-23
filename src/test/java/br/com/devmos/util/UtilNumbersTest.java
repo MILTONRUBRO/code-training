@@ -58,5 +58,12 @@ public class UtilNumbersTest {
 		assertEquals(4.0, average, 0.001);
 	}
 	
+	@Test
+	public void testGetSum() {
+		var numbers = List.of(6,2,4,7,1);
+		int sum = UtilNumbers.getSum(numbers);
+		assertEquals(20, sum);
+	}
+	
 	
 }

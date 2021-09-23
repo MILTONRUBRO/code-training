@@ -40,4 +40,8 @@ public class UtilNumbers {
 	public static double getAverage(List<Integer> numbers) {
 		return numbers.stream().mapToInt(i -> i).average().getAsDouble();
 	}
+	
+	public static int getSum(List<Integer> numbers) {
+		return numbers.stream().mapToInt(i -> i).sum();
+	}
 }
