@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.Test;
 
@@ -41,6 +42,17 @@ public class UtilStringTest {
 		
 		assertEquals("uva", frutasOrdenadas.get(0));
 	}
+	
+	@Test
+	public void testRemoveRepeated() {
+		List<String> frutas = Arrays.asList("maçã", "banana", "uva", "melancia", "uva");
+		Set<String> frutasSemRepeticoes = UtilString.removeRepeated(frutas);
+		
+		assertEquals(4, frutasSemRepeticoes.size());
+		
+	}
+	
+	
 	
 	
 	

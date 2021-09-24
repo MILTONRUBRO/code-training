@@ -1,7 +1,9 @@
 package br.com.devmos.util;
 
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
@@ -19,5 +21,9 @@ public class UtilString {
 		return strs.stream()
 		.sorted(Comparator.comparingInt(String::length))
 		.collect(Collectors.toList());
+	}
+	
+	public static Set<String> removeRepeated(List<String> strs){
+		return new HashSet<>(strs);
 	}
 }
