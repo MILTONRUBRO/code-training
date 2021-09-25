@@ -44,6 +44,14 @@ public class UtilStringTest {
 	}
 	
 	@Test
+	public void testOrdena() {
+		List<String> frutas = Arrays.asList("maçã", "banana", "uva", "melancia");
+		List<String> frutasOrdenadas = UtilString.ordena(frutas);
+		
+		assertEquals("banana", frutasOrdenadas.get(0));
+	}
+	
+	@Test
 	public void testRemoveRepeated() {
 		List<String> frutas = Arrays.asList("maçã", "banana", "uva", "melancia", "uva");
 		Set<String> frutasSemRepeticoes = UtilString.removeRepeated(frutas);
@@ -51,9 +59,5 @@ public class UtilStringTest {
 		assertEquals(4, frutasSemRepeticoes.size());
 		
 	}
-	
-	
-	
-	
 	
 }

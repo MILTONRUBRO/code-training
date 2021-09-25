@@ -26,4 +26,12 @@ public class UtilString {
 	public static Set<String> removeRepeated(List<String> strs){
 		return new HashSet<>(strs);
 	}
+	
+	public static List<String> ordena(List<String> strs){
+		return strs.stream()
+		.sorted(Comparator.naturalOrder())
+		.collect(Collectors.toList());
+	}
+	
+	
 }
