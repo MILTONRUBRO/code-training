@@ -65,5 +65,9 @@ public class UtilNumbersTest {
 		assertEquals(20, sum);
 	}
 	
-	
+	@Test
+	public void testGeraCEP() {
+		String cep = UtilNumbers.geraCEP();
+		assertEquals(9, cep.length());
+	}
 }

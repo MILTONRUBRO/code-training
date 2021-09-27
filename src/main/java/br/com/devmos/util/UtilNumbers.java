@@ -29,6 +29,16 @@ public class UtilNumbers {
 		return sb.toString();
 	}
 	
+	public static String geraCEP() {
+		var random = new Random();
+		var sb = new StringBuilder();
+		for(var i = 0; i < 8; i++) {
+			sb.append(random.nextInt(10));
+		}
+		sb.insert(5, "-");
+		return sb.toString();
+	}
+	
 	public static int getMinNumber(List<Integer> numbers) {
 		return numbers.stream().min(Comparator.naturalOrder()).orElse(Integer.MIN_VALUE);
 	}
