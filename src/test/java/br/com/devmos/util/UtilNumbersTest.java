@@ -70,4 +70,10 @@ public class UtilNumbersTest {
 		String cep = UtilNumbers.geraCEP();
 		assertEquals(9, cep.length());
 	}
+	
+	@Test
+	public void testGeraPlacaVeiculo() {
+		String placa = UtilNumbers.geraPlacaVeiculo();
+		assertEquals(8, placa.length());
+	}
 }

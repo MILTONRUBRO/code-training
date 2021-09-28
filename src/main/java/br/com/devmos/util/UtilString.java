@@ -29,8 +29,8 @@ public class UtilString {
 	
 	public static List<String> ordena(List<String> strs){
 		return strs.stream()
-		.sorted(Comparator.naturalOrder())
-		.collect(Collectors.toList());
+					.sorted(Comparator.naturalOrder())
+					.collect(Collectors.toList());
 	}
 	
 	

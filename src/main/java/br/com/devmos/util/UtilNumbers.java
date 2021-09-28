@@ -29,6 +29,15 @@ public class UtilNumbers {
 		return sb.toString();
 	}
 	
+	public static String geraPlacaVeiculo() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(geraSenhaLetras(3));
+		sb.append("-");
+		sb.append(geraSenhaNumerica(4));
+		
+		return sb.toString();
+	}
+	
 	public static String geraCEP() {
 		var random = new Random();
 		var sb = new StringBuilder();
