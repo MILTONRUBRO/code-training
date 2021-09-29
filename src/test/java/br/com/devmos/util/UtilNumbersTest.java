@@ -76,4 +76,12 @@ public class UtilNumbersTest {
 		String placa = UtilNumbers.geraPlacaVeiculo();
 		assertEquals(8, placa.length());
 	}
+	
+	@Test
+	public void testGetMaxSubArraySum() {
+		int numbers[] = {2, -5, 10, -1, 4, -10};
+		int maxSum = UtilNumbers.maxSubArraySum(numbers);
+		assertEquals(13, maxSum);
+	}
+	
 }

@@ -63,4 +63,17 @@ public class UtilNumbers {
 	public static int getSum(List<Integer> numbers) {
 		return numbers.stream().mapToInt(i -> i).sum();
 	}
+	
+	
+	public static int maxSubArraySum(int[] numbers) {
+		var maxSum = numbers[0];
+		var sum = numbers[0];
+		
+		for(var i = 0; i < numbers.length; i++) {
+			var number = numbers[i];
+			sum = Math.max(sum + number, number);
+			maxSum = Math.max(sum, maxSum);
+		}
+		return maxSum;
+	}
 }

@@ -19,8 +19,8 @@ public class UtilString {
 	
 	public static List<String> ordenaPeloTamanho(List<String> strs){
 		return strs.stream()
-		.sorted(Comparator.comparingInt(String::length))
-		.collect(Collectors.toList());
+					.sorted(Comparator.comparingInt(String::length))
+					.collect(Collectors.toList());
 	}
 	
 	public static Set<String> removeRepeated(List<String> strs){
