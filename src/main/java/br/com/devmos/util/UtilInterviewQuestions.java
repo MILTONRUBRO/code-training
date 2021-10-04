@@ -29,5 +29,24 @@ public class UtilInterviewQuestions {
 		}
 		return nums;
 	}
+	
+	/**
+	 * Dado um array de inteiros representado valor de ações
+	 * deve se encontrar qual o melhor valor para se vender
+	 * @param prices
+	 * @return
+	 */
+	public static int maxProfit(int[] prices) {
+		int min = Integer.MAX_VALUE;
+		int max = 0;
+		
+		for(int i = 0; i < prices.length; i++) {
+			if(prices[i] <= min)
+				min = prices[i];
+			if(prices[i] - min >= max)
+				max = prices[i] - min;
+		}
+		return max;
+	}
 
 }
