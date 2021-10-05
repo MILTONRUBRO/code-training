@@ -2,6 +2,7 @@ package br.com.devmos.util;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Stack;
 
 public class UtilInterviewQuestions {
 	
@@ -47,6 +48,37 @@ public class UtilInterviewQuestions {
 				max = prices[i] - min;
 		}
 		return max;
+	}
+	
+	/**
+	 * Dado uma string com paranteses, chaves e colchetes
+	 * return se é valido com a abertura e fechamento do mesmo tipo
+	 * @return
+	 */
+	public static boolean isValid(String str) {
+		Map<Character, Character> map = new HashMap<>();
+		
+		map.put(')', '(');
+		map.put(']', '[');
+		map.put('}', '{');
+		
+		Stack<Character> answer = new Stack<>();
+		
+		for(int i = 0; i < str.length(); i++ ) {
+			char c = str.charAt(i);
+			
+			if(!map.containsKey(c))
+				answer.push(c);
+			
+			if(map.containsKey(c)) {
+				char top = answer.isEmpty() ? '#' : answer.peek();
+				if(top != map.get(c))
+					return false;
+				else
+					answer.pop();
+			}
+		}
+		return answer.isEmpty();
 	}
 
 }
