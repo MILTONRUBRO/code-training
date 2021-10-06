@@ -37,5 +37,11 @@ public class UtilInterviewQuestionsTest {
 		boolean answer = UtilInterviewQuestions.isValid("{[()]}");
 		assertTrue(answer);
 	}
+	
+	@Test
+	public void testRomanToInt() {
+		int numero = UtilInterviewQuestions.romanToInt("XV");
+		assertEquals(15, numero);
+	}
 
 }
