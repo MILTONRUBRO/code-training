@@ -81,6 +81,11 @@ public class UtilInterviewQuestions {
 		return answer.isEmpty();
 	}
 	
+	/**
+	 * Converte numeros romanos em inteiros
+	 * @param str
+	 * @return
+	 */
 	public static int romanToInt(String str) {
 		int[] map = new int[256];
 		
@@ -106,6 +111,24 @@ public class UtilInterviewQuestions {
 		}
 		
 		return ret;
+	}
+	
+	/**
+	 * Dado um array de numeros inteiros
+	 * retorne o numero faltante na sequencia
+	 * @param nums
+	 * @return
+	 */
+	public static int missingNumber(int[] nums) {
+		int sum = 0;
+		
+		for(int i = 0; i < nums.length; i++) {
+			sum += nums[i];
+		}
+		
+		int total = (nums.length * (nums.length + 1))/2;
+		
+		return total - sum;
 	}
 
 }

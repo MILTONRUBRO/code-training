@@ -43,5 +43,12 @@ public class UtilInterviewQuestionsTest {
 		int numero = UtilInterviewQuestions.romanToInt("XV");
 		assertEquals(15, numero);
 	}
+	
+	@Test
+	public void testMissingNumber() {
+		int[] nums = {0,1,5,3,2};
+		int numeroFaltante = UtilInterviewQuestions.missingNumber(nums);
+		assertEquals(4, numeroFaltante);
+	}
 
 }
