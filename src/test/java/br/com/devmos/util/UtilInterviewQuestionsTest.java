@@ -50,5 +50,15 @@ public class UtilInterviewQuestionsTest {
 		int numeroFaltante = UtilInterviewQuestions.missingNumber(nums);
 		assertEquals(4, numeroFaltante);
 	}
+	
+	@Test
+	public void testFirstNonRepeatingCharacter() {
+		String str = "abacabad";
+		char result = UtilInterviewQuestions.firstNonRepeatingCharacter(str);
+		assertEquals('c', result);
+	}
+	
+	
+	
 
 }
