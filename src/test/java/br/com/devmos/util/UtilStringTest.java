@@ -57,7 +57,12 @@ public class UtilStringTest {
 		Set<String> frutasSemRepeticoes = UtilString.removeRepeated(frutas);
 		
 		assertEquals(4, frutasSemRepeticoes.size());
-		
 	}
 	
+	@Test
+	public void testLetraAlfabetoParaNumerico() {
+		int num = UtilString.letraAlfabetoParaNumerico('A');
+		
+		assertEquals(1, num);
+	}
 }

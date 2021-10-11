@@ -33,5 +33,8 @@ public class UtilString {
 					.collect(Collectors.toList());
 	}
 	
-	
+	public static int letraAlfabetoParaNumerico(Character c) {
+		int numericValue = c;
+		return numericValue - 64;
+	}
 }
