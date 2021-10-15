@@ -65,4 +65,11 @@ public class UtilStringTest {
 		
 		assertEquals(1, num);
 	}
+	
+	@Test
+	public void testIsStringOnlyAlphabet() {
+		boolean response = UtilString.isStringOnlyAlphabet(STRING_WITH_LETTER_AND_DIGIT);
+		
+		assertEquals(false, response);
+	}
 }

@@ -37,4 +37,10 @@ public class UtilString {
 		int numericValue = c;
 		return numericValue - 64;
 	}
+	
+	public static boolean isStringOnlyAlphabet(String str) {
+		return ((!str.equals("")) 
+				&&(str != null)
+				&& (str.chars().allMatch(Character::isLetter)));
+	}
 }
