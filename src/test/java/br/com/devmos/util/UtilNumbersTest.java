@@ -84,4 +84,10 @@ public class UtilNumbersTest {
 		assertEquals(13, maxSum);
 	}
 	
+	@Test
+	public void testIsPrime() {
+		boolean prime = UtilNumbers.isPrime(19);
+		assertEquals(true, prime);
+	}
+	
 }
