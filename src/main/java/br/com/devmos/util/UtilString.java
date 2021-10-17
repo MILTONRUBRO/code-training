@@ -43,4 +43,15 @@ public class UtilString {
 				&&(str != null)
 				&& (str.chars().allMatch(Character::isLetter)));
 	}
+	
+	public static String reverterOrdemString(String str) {
+		int tam = str.split(" ").length;
+		StringBuilder sb = new StringBuilder();
+		
+		for(int i = tam-1; i >= 0; i--) {
+			String[] strSplited = str.split(" ");
+			sb.append(strSplited[i] + " ");
+		}
+		return sb.toString().trim();
+	}
 }

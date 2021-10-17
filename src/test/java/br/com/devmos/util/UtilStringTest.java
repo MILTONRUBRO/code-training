@@ -15,6 +15,7 @@ public class UtilStringTest {
 	private static final String STRING_WITH_ONLY_DIGIT = "1322141";
 	private static final String STRING_WITH_LETTER_AND_DIGIT = "132FF2141";
 	private static final String NAME = "Ragnar";
+	private static final String FRASE = "pastel comprar feira na fui";
 
 
 	@Test
@@ -72,4 +73,12 @@ public class UtilStringTest {
 		
 		assertEquals(false, response);
 	}
+	
+	@Test
+	public void testReverterOrdemString() {
+		String reverterOrdemString = UtilString.reverterOrdemString(FRASE);
+		String str = "fui na feira comprar pastel";
+		assertEquals(str, reverterOrdemString);
+	}
+	
 }
