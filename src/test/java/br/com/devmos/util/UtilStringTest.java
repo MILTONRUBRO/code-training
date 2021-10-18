@@ -81,4 +81,10 @@ public class UtilStringTest {
 		assertEquals(str, reverterOrdemString);
 	}
 	
+	@Test
+	public void testRemoveNonAlphabetChar() {
+		String result = UtilString.removeNonAlphabetChar("Azad is a good boy, isn't he ?");
+		assertEquals("Azad is a good boy, isn t he", result);
+	}
+	
 }

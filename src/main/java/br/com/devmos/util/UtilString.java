@@ -54,4 +54,14 @@ public class UtilString {
 		}
 		return sb.toString().trim();
 	}
+	
+	public static String removeNonAlphabetChar(String str) {
+		String[] tokens = str.split("\\W+");
+		StringBuilder sb = new StringBuilder();
+		for(String token : tokens) {
+			sb.append(token + " ");
+		}
+		
+		return sb.toString().trim();
+	}
 }
