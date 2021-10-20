@@ -90,4 +90,10 @@ public class UtilNumbersTest {
 		assertEquals(true, prime);
 	}
 	
+	@Test
+	public void testGetPotencia() {
+		Double result = UtilNumbers.getPotencia(2.0, 3.0);
+		assertEquals(8.0, result, 0.001);
+	}
+	
 }

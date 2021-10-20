@@ -91,4 +91,8 @@ public class UtilNumbers {
 		}
 		return true;
 	}
+	
+	public static Double getPotencia(Double num1, Double num2) {
+		return Math.pow(num1, num2);
+	}
 }
