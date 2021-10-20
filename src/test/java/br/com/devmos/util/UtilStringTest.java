@@ -84,7 +84,14 @@ public class UtilStringTest {
 	@Test
 	public void testRemoveNonAlphabetChar() {
 		String result = UtilString.removeNonAlphabetChar("Azad is a good boy, isn't he ?");
-		assertEquals("Azad is a good boy, isn t he", result);
+		assertEquals("Azad is a good boy isn t he", result);
 	}
 	
+	@Test
+	public void testGetRandomNameFromList() {
+		List<String> frutas = Arrays.asList("maria", "jose", "joaquim", "joao");
+		String randomName = UtilString.getRandomNameFromList(frutas);
+		
+		assertFalse(randomName.isEmpty());
+	}
 }

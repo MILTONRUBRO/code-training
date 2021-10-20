@@ -3,6 +3,7 @@ package br.com.devmos.util;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -63,5 +64,12 @@ public class UtilString {
 		}
 		
 		return sb.toString().trim();
+	}
+	
+	
+	public static String getRandomNameFromList(List<String> names) {
+		Random random = new Random();
+		int number = random.nextInt(names.size());
+		return names.get(number);
 	}
 }
