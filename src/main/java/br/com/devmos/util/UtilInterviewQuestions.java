@@ -2,6 +2,7 @@ package br.com.devmos.util;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 import java.util.Stack;
 
 public class UtilInterviewQuestions {
@@ -138,6 +139,11 @@ public class UtilInterviewQuestions {
 			}
 		}
 		return '-';
+	}
+	
+	public static Set<String> intersectionSet(Set<String> set1, Set<String> set2){
+			set1.retainAll(set2);
+			return set1;
 	}
 
 }

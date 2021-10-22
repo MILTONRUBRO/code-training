@@ -57,8 +57,5 @@ public class UtilInterviewQuestionsTest {
 		char result = UtilInterviewQuestions.firstNonRepeatingCharacter(str);
 		assertEquals('c', result);
 	}
-	
-	
-	
 
 }
