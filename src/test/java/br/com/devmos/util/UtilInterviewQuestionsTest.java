@@ -57,5 +57,13 @@ public class UtilInterviewQuestionsTest {
 		char result = UtilInterviewQuestions.firstNonRepeatingCharacter(str);
 		assertEquals('c', result);
 	}
+	
+	
+	@Test
+	public void testBinarySearch() {
+		int[] nums = {0,1,2,3,5,7};
+		int posicao = UtilInterviewQuestions.binarySearch(nums, 5);
+		assertEquals(4, posicao);
+	}
 
 }
