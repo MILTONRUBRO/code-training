@@ -1,6 +1,8 @@
 package br.com.devmos.util;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
@@ -175,6 +177,29 @@ public class UtilInterviewQuestions {
 			}
 			arr[j] = value;
 		}
+	}
+	/**
+	 * dado um numero nao negativo numRow gere a primeira 
+	 * numRow do triangulo de Pascal
+	 * @param numRows
+	 * @return
+	 */
+	public static List<List<Integer>> pascalTriangle(int numRows){
+		List<List<Integer>> integers = new ArrayList<List<Integer>>();
+		
+		int c = 1;
+		int line = 1;
+		
+		for(; line <= numRows; line++) {
+			List rows = new ArrayList();
+			c = 1;
+			for(int i = 1; i <= line; i++) {
+				rows.add(c);
+				c = c * (line-1)/i;
+			}
+			integers.add(rows);
+		}
+		return integers;
 	}
 
 }
