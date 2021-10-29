@@ -1,5 +1,6 @@
 package br.com.devmos.util;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
@@ -71,5 +72,10 @@ public class UtilString {
 		Random random = new Random();
 		int number = random.nextInt(names.size());
 		return names.get(number);
+	}
+	
+	public static String joinByDelimiter(char delimiter, String...  args) {
+		return Arrays.stream(args, 0, args.length)
+						.collect(Collectors.joining(String.valueOf(delimiter)));
 	}
 }
