@@ -94,4 +94,11 @@ public class UtilStringTest {
 		
 		assertFalse(randomName.isEmpty());
 	}
+	
+	@Test
+	public void testIsPalindrome() {
+		String str = "ovo";
+		boolean isPalindrome = UtilString.isPalindrome(str);
+		assertTrue(isPalindrome);
+	}
 }

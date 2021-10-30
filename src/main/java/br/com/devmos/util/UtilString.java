@@ -78,4 +78,8 @@ public class UtilString {
 		return Arrays.stream(args, 0, args.length)
 						.collect(Collectors.joining(String.valueOf(delimiter)));
 	}
+	
+	public static boolean isPalindrome(String str) {
+		return str.equals(new StringBuilder(str).reverse().toString());
+	}
 }
