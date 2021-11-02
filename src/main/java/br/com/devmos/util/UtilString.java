@@ -82,4 +82,8 @@ public class UtilString {
 	public static boolean isPalindrome(String str) {
 		return str.equals(new StringBuilder(str).reverse().toString());
 	}
+	
+	public static String removeComentsHtml(String str) {
+		return str.replaceAll("(?s)<!--.*?-->", "");
+	}
 }
