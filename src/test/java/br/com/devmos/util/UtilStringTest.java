@@ -16,6 +16,30 @@ public class UtilStringTest {
 	private static final String STRING_WITH_LETTER_AND_DIGIT = "132FF2141";
 	private static final String NAME = "Ragnar";
 	private static final String FRASE = "pastel comprar feira na fui";
+	private static final String HTML_WITH_COMMENTS = "<html>\r\n"
+			+ "<head>\r\n"
+			+ "  <title>Title of the document</title>\r\n"
+			+ "</head>\r\n"
+			+ "\r\n"
+			+ "<body>\r\n"
+			+ "<!-- this is a comment -->"
+			+ "  <h1>This is a heading</h1>\r\n"
+			+ "  <p>This is a paragraph.</p>\r\n"
+			+ "</body>\r\n"
+			+ "\r\n"
+			+ "</html>";
+	
+	private static final String HTML_WITHOUT_COMMENTS = "<html>\r\n"
+			+ "<head>\r\n"
+			+ "  <title>Title of the document</title>\r\n"
+			+ "</head>\r\n"
+			+ "\r\n"
+			+ "<body>\r\n"
+			+ "  <h1>This is a heading</h1>\r\n"
+			+ "  <p>This is a paragraph.</p>\r\n"
+			+ "</body>\r\n"
+			+ "\r\n"
+			+ "</html>";
 
 
 	@Test
@@ -101,4 +125,12 @@ public class UtilStringTest {
 		boolean isPalindrome = UtilString.isPalindrome(str);
 		assertTrue(isPalindrome);
 	}
+	
+	@Test
+	public void testRemoveComentsHtml() {
+		String result = UtilString.removeComentsHtml(HTML_WITH_COMMENTS);
+		assertEquals(HTML_WITHOUT_COMMENTS, result);
+	}
+	
+	
 }
