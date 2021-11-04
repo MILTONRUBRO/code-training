@@ -9,6 +9,8 @@ import java.util.List;
 
 import org.junit.Test;
 
+import br.com.devmos.model.GausLegendre;
+
 public class UtilNumbersTest {
 	
 	@Test
@@ -94,6 +96,13 @@ public class UtilNumbersTest {
 	public void testGetPotencia() {
 		Double result = UtilNumbers.getPotencia(2.0, 3.0);
 		assertEquals(8.0, result, 0.001);
+	}
+	
+	@Test
+	public void testPIGenerate() {
+		double pi = GausLegendre.pi(3);
+		assertEquals(3.1415, pi, 0.001);
+
 	}
 	
 }

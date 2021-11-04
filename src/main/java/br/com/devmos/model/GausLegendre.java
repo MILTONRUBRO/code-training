@@ -10,7 +10,7 @@ public class GausLegendre {
 
 	private static double b(int n) {
 		if(n == 0)
-			return 1.0/4.0;
+			return 1.0/Math.sqrt(2.0);
 		return Math.sqrt(a(n - 1) * b(n - 1));
 	}
 	
