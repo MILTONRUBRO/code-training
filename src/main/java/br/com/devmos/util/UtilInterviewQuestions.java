@@ -216,5 +216,28 @@ public class UtilInterviewQuestions {
 		}
 		return area;
 	}
+	
+	public static int[] dailyTemperatures(int[] nums) {
+		int size = nums.length;
+		int answer[] = new int[size];
+		
+		for(int i = 0; i < size-1; i++) {
+			int flag = 0;
+			
+			for(int j = i+1; j < size; j++) {
+				if(nums[j] > nums[i]) {
+					answer[i] = j-i;
+					flag = 1;
+					break;
+				}
+			}
+			
+			if(flag == 0) {
+				answer[i] = 0;
+			}
+		}
+		answer[size-1] = 0;
+		return answer;
+	}
 
 }
