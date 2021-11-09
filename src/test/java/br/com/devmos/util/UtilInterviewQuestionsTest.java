@@ -65,5 +65,13 @@ public class UtilInterviewQuestionsTest {
 		int posicao = UtilInterviewQuestions.binarySearch(nums, 5);
 		assertEquals(4, posicao);
 	}
+	
+	@Test
+	public void testDailyTemperatures() {
+		int[] temperatures = {73, 74, 75, 71, 69, 72, 76, 73};
+		int[] responses = UtilInterviewQuestions.dailyTemperatures(temperatures);
+		
+		assertArrayEquals(responses, new int[] {1, 1, 4, 2, 1, 1, 0, 0});
+	}
 
 }
