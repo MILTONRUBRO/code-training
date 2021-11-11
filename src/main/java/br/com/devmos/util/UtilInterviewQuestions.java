@@ -239,5 +239,33 @@ public class UtilInterviewQuestions {
 		answer[size-1] = 0;
 		return answer;
 	}
+	
+	/**
+	 * Usando o algoritmo de Floyd ou algoritmo da lebre e tartaruga para encontrar valor duplicado no array
+	 * @return
+	 */
+	public static int findDuplicate(int[] numbers) {
+		int size = numbers.length;
+		
+		if(size <= 1)
+			return -1;
+		
+		int slow = numbers[0];
+		int fast = numbers[numbers[0]];
+		
+		while(fast != slow) {
+			slow = numbers[slow];
+			fast = numbers[numbers[fast]];
+		}
+		
+		fast = 0;
+		
+		while(slow != fast) {
+			slow = numbers[slow];
+			fast = numbers[fast];
+		}
+		
+		return slow;
+	}
 
 }
