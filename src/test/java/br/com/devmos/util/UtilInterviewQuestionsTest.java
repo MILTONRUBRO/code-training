@@ -73,5 +73,13 @@ public class UtilInterviewQuestionsTest {
 		
 		assertArrayEquals(responses, new int[] {1, 1, 4, 2, 1, 1, 0, 0});
 	}
+	
+	@Test
+	public void testFindDuplicate() {
+		int[] numbers = {2, 4, 1, 5, 3, 6, 8, 7, 4};
+		int response = UtilInterviewQuestions.findDuplicate(numbers);
+		
+		assertEquals(4, response);
+	}
 
 }
