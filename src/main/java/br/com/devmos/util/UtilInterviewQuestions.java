@@ -148,6 +148,12 @@ public class UtilInterviewQuestions {
 			return set1;
 	}
 	
+	/**
+	 * Algoritmo de busca binaria
+	 * @param nums
+	 * @param target
+	 * @return
+	 */
 	public static int binarySearch(int[] nums, int target) {
 		int left = 0;
 		int right = nums.length -1;
@@ -166,6 +172,10 @@ public class UtilInterviewQuestions {
 		return -1;
 	}
 	
+	/**
+	 * Aloritmo de insercao no metodo sort
+	 * @param arr
+	 */
 	public static void insertionSort(int[] arr) {
 		for(int i = 1; i < arr.length; i++) {
 			int value = arr[i];
