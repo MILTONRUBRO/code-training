@@ -81,5 +81,11 @@ public class UtilInterviewQuestionsTest {
 		
 		assertEquals(4, response);
 	}
+	
+	@Test
+	public void testSumWithoutOperators() {
+		int numero = UtilInterviewQuestions.sumWithoutOperators(21, 30);
+		assertEquals(51, numero);
+	}
 
 }

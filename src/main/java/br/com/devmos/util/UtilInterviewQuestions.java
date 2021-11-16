@@ -314,5 +314,21 @@ public class UtilInterviewQuestions {
 		
 		return res;
 	}
+	
+	/**
+	 * Add two numbers without using arithmetic operators
+	 * @param num1
+	 * @param num2
+	 * @return
+	 */
+	public static int sumWithoutOperators(int num1, int num2) {
+		while(num2 != 0) {
+			int carry = num1 & num2;
+			
+			num1 = num1 ^  num2;
+			num2 = carry << 1;
+		}
+		return num1;
+	}
 
 }
