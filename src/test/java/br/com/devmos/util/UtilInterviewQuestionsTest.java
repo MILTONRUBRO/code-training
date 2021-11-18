@@ -5,6 +5,8 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.List;
+
 import org.junit.Test;
 
 public class UtilInterviewQuestionsTest {
@@ -86,6 +88,13 @@ public class UtilInterviewQuestionsTest {
 	public void testSumWithoutOperators() {
 		int numero = UtilInterviewQuestions.sumWithoutOperators(21, 30);
 		assertEquals(51, numero);
+	}
+	
+	@Test
+	public void testSockMerchantOk() {
+		var pileSocks = List.of(10,20,20,30,10,40,20,35,50);		
+		int pares = UtilInterviewQuestions.sockMerchant(pileSocks);
+		assertEquals(2, pares);
 	}
 
 }
