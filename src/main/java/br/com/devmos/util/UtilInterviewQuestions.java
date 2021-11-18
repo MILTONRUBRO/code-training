@@ -3,6 +3,7 @@ package br.com.devmos.util;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -329,6 +330,24 @@ public class UtilInterviewQuestions {
 			num2 = carry << 1;
 		}
 		return num1;
+	}
+	
+	/**
+	 * Dado uma pilha de meias retorne os pares encontrados na lista
+	 * @param sockers
+	 * @return
+	 */
+	public static int sockMerchant(List<Integer> sockers) {
+		Set<Integer> unmatched = new HashSet<>();
+		int pairs = 0;
+		
+		for(int i = 0; i < sockers.size(); i++) {
+			if(!unmatched.add(sockers.get(i))) {
+				unmatched.remove(sockers.get(i));
+				pairs++;
+			}
+		}
+		return pairs;
 	}
 
 }
