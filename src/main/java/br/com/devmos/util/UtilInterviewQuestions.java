@@ -386,5 +386,14 @@ public class UtilInterviewQuestions {
 		
 		return table[n];
 	}
+	
+	public static int calcBinominalCoeficiente(int n, int k) {
+		if(k > n)
+			return 0;
+		if(k == 0 || k == n)
+			return 1;
+		
+		return calcBinominalCoeficiente(n - 1, k -1) + calcBinominalCoeficiente(n - 1, k);
+	}
 
 }
