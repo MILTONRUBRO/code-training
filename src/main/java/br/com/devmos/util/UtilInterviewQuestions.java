@@ -371,5 +371,20 @@ public class UtilInterviewQuestions {
 		
 		return (result * result);
 	}
+	
+	public static long countWays(int s[], int m, int n) {
+		long[] table = new long[n+1];
+		
+		Arrays.fill(table, 0);
+		table[0] = 1;
+		
+		for(int i = 0; i < m; i++) {
+			for(int j = s[i]; j <= n; j++) {
+				table[j] += table[j - s[i]];
+			}
+		}
+		
+		return table[n];
+	}
 
 }
