@@ -96,5 +96,11 @@ public class UtilInterviewQuestionsTest {
 		int pares = UtilInterviewQuestions.sockMerchant(pileSocks);
 		assertEquals(2, pares);
 	}
+	
+	@Test
+	public void testCalcBinominalCoeficienteOk() {
+		int result = UtilInterviewQuestions.calcBinominalCoeficiente(5, 2);
+		assertEquals(10, result);
+	}
 
 }
