@@ -20,7 +20,7 @@ public class HashUtil {
 	public static String desHash(long hashed) {
 		var numeros = new ArrayList<Long>();
 		
-		for(int i = 0; i < HASH; i++) {
+		for(int i = 0; i < 7; i++) {
 			numeros.add(hashed);
 			hashed = hashed/FACTOR;
 		}
@@ -29,7 +29,7 @@ public class HashUtil {
 		char c;
 		long number;
 		
-		for(int i = HASH-1; i >= 0; i-- ) {
+		for(int i = 6; i >= 0; i-- ) {
 			
 			if( i == 6) {
 				number = numeros.get(i) - (HASH * FACTOR);
