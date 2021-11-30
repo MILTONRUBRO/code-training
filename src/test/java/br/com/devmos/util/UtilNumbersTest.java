@@ -105,4 +105,10 @@ public class UtilNumbersTest {
 
 	}
 	
+	@Test
+	public void testfactorial() {
+		long factorial = UtilNumbers.factorial(5);
+		assertEquals(120, factorial);
+	}
+	
 }

@@ -95,4 +95,11 @@ public class UtilNumbers {
 	public static Double getPotencia(Double num1, Double num2) {
 		return Math.pow(num1, num2);
 	}
+	
+	public static long factorial(int num) {
+		if( num <= 1)
+			return 1;
+		
+		return factorial(num - 1) * num;
+	}
 }
