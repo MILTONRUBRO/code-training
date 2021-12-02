@@ -415,6 +415,22 @@ public class UtilInterviewQuestions {
 		
 		return arr;
 	}
+	
+	public static int maxSubArraySum(int numbers[]) {
+		int size = numbers.length;
+		int maxSoFar = Integer.MIN_VALUE;
+		int maxEndingHere = 0;
+		
+		for(int i = 0; i < size; i++) {
+			maxEndingHere = maxEndingHere + numbers[i];
+			
+			if(maxSoFar < maxEndingHere)
+				maxSoFar = maxEndingHere;
+			if(maxEndingHere < 0)
+				maxEndingHere = 0;
+		}
+		return maxSoFar;
+	}
 
 
 }
