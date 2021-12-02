@@ -103,5 +103,11 @@ public class UtilInterviewQuestionsTest {
 		int result = UtilInterviewQuestions.calcBinominalCoeficiente(5, 2);
 		assertEquals(10, result);
 	}
-
+	
+	@Test
+	public void testMaxSubArraySum() {
+		int[] nums = {-2, -3, 4, -1, -2, 1, 5, -3};
+		int sum = UtilInterviewQuestions.maxSubArraySum(nums);
+		assertEquals(7, sum);
+	}
 }
