@@ -86,4 +86,8 @@ public class UtilString {
 	public static String removeComentsHtml(String str) {
 		return str.replaceAll("(?s)<!--.*?-->", "");
 	}
+	
+	public static String repeatStringWithSpace(String str, int tam) {
+		 return str.repeat(tam);
+	}
 }
