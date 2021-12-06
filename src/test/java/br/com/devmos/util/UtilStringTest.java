@@ -132,5 +132,10 @@ public class UtilStringTest {
 		assertEquals(HTML_WITHOUT_COMMENTS, result);
 	}
 	
+	@Test
+	public void testRepeatStringWithSpace() {
+		String result = UtilString.repeatStringWithSpace("call", 3);
+		assertEquals("callcallcall", result);
+	}
 	
 }
