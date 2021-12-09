@@ -138,4 +138,11 @@ public class UtilStringTest {
 		assertEquals("callcallcall", result);
 	}
 	
+	@Test
+	public void testCountVowels() {
+		int totalVowels = UtilString.countVowels(FRASE);
+		
+		assertEquals(10, totalVowels);
+	}
+	
 }
