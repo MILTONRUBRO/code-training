@@ -2,8 +2,10 @@ package br.com.devmos.util;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 import java.util.regex.Pattern;
@@ -106,5 +108,20 @@ public class UtilString {
 		ch = Character.toUpperCase(ch);
 		
 		return (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U');
+	}
+	
+	public static Character  findDuplicate(String str) {
+		Map<Character, Integer> values = new HashMap<>();
+		
+		for(int i = 0; i < str.length(); i++) {
+			char letra = str.charAt(i);
+			
+			if(values.containsKey(letra)) {
+				return letra;
+			}
+			
+			values.put(letra, i);
+		}
+		return null;
 	}
 }

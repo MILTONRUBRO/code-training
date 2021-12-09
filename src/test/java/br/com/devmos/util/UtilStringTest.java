@@ -2,8 +2,10 @@ package br.com.devmos.util;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
+import java.nio.CharBuffer;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
@@ -145,4 +147,10 @@ public class UtilStringTest {
 		assertEquals(10, totalVowels);
 	}
 	
+	
+	@Test
+	public void testFindDuplicate() {
+		Character result = UtilString.findDuplicate("abydby");
+		assertEquals(Character.valueOf('b'), result);
+	}
 }
