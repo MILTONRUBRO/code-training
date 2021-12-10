@@ -124,4 +124,27 @@ public class UtilString {
 		}
 		return null;
 	}
+	
+    static String encryptString(String s, int k) {
+        int countVowels = 0;
+        int countConsonants = 0;
+        String ans = "";
+        int size = s.length();
+ 
+        for (int i = 0; i <= size - k; i++) {
+            countVowels = 0;
+            countConsonants = 0;
+ 
+            for (int r = i; r <= i + k - 1; r++) {
+                if (isVowel(s.charAt(r))) {
+                    countVowels++;
+                } else {
+                    countConsonants++;
+                }
+            }
+ 
+            ans += String.valueOf(countVowels * countConsonants);
+        }
+        return ans;
+    }
 }
