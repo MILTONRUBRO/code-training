@@ -153,4 +153,10 @@ public class UtilStringTest {
 		Character result = UtilString.findDuplicate("abydby");
 		assertEquals(Character.valueOf('b'), result);
 	}
+	
+	@Test
+	public void testEncryptString() {
+		String encryptString = UtilString.encryptString("hello", 2);
+		assertEquals("1101", encryptString);
+	}
 }

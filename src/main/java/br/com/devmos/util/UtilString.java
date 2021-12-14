@@ -147,4 +147,21 @@ public class UtilString {
         }
         return ans;
     }
+    
+    public static boolean isCommonSubstring(String s1, String s2) {
+    	char[] chars = s1.toCharArray();
+    	
+    	Set<Character> charSet = new HashSet<Character>();
+    	
+    	for(char c : chars) {
+    		charSet.add(c);
+    	}
+    	
+    	for(int i = 0; i < s2.length(); i++) {
+    		if(charSet.contains(s2.charAt(i)))
+    			return true;
+    	}
+    	return false;
+    	
+    }
 }
