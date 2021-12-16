@@ -159,4 +159,17 @@ public class UtilStringTest {
 		String encryptString = UtilString.encryptString("hello", 2);
 		assertEquals("1101", encryptString);
 	}
+	
+	
+	@Test
+	public void testIsCommonSubstringTrue() {
+		boolean isCommon = UtilString.isCommonSubstring("abra", "kadabra");
+		assertTrue(isCommon);
+	}
+	
+	@Test
+	public void testIsCommonSubstringFAlse() {
+		boolean isCommon = UtilString.isCommonSubstring("lucario", "eevee");
+		assertFalse(isCommon);
+	}
 }
