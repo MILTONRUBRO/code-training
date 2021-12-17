@@ -9,6 +9,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 
+import com.sun.tools.javac.code.Attribute.Array;
+
 public class UtilInterviewQuestions {
 	
 	/**
@@ -430,6 +432,22 @@ public class UtilInterviewQuestions {
 		}
 		return maxSoFar;
 	}
-
+	
+	/**
+	 * Dado um array de N-1 que só contem inteiros diferentes no range 1 para N
+	 * encontre o numero perdido
+	 * @param numbers
+	 * @param n
+	 * @return
+	 */
+	public static int missingNumber(int[] numbers, int n) {
+		int sum = 0;
+		
+		for(int i = n; i >= 1; i--) {
+			sum += i;
+		}
+		
+		return sum - Arrays.stream(numbers).sum();
+	}
 
 }
