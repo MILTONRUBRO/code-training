@@ -9,7 +9,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 
-import com.sun.tools.javac.code.Attribute.Array;
 
 public class UtilInterviewQuestions {
 	

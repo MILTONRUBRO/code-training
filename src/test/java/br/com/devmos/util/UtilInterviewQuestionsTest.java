@@ -110,4 +110,12 @@ public class UtilInterviewQuestionsTest {
 		int sum = UtilInterviewQuestions.maxSubArraySum(nums);
 		assertEquals(7, sum);
 	}
+	
+	@Test
+	public void testMissingNumberWithArguments() {
+		int[] nums = {6, 1, 2, 8, 3, 4, 7, 10, 5};
+		int sum = UtilInterviewQuestions.missingNumber(nums, 10);
+		assertEquals(9, sum);
+	}
+	
 }
