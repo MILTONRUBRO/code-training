@@ -448,5 +448,20 @@ public class UtilInterviewQuestions {
 		
 		return sum - Arrays.stream(numbers).sum();
 	}
+	
+	public static String caesarCipher(String frase, int casas) {
+		var sb = new StringBuilder();
+		
+		for(int i = 0; i < frase.length(); i++) {
+			char letra = frase.charAt(i);
+			
+			if(Character.isLetter(letra)) {
+				sb.append((char) (letra + casas));
+			}else {
+				sb.append(letra);
+			}
+		}
+		return sb.toString();
+	}
 
 }
