@@ -470,5 +470,18 @@ public class UtilInterviewQuestions {
 		return sb.toString();
 		
 	}
+	
+    public static Character avancaLetra(Character chr, int pos){
+		
+		var alfabeto = Arrays.asList('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
+		
+		int limite = alfabeto.indexOf(chr)+pos;
+		
+		if(limite >= 26 ){
+			limite = limite % 26;
+		} 
+		
+		return alfabeto.get(limite);
+	}
 
 }

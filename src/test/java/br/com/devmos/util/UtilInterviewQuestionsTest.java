@@ -118,4 +118,10 @@ public class UtilInterviewQuestionsTest {
 		assertEquals(9, sum);
 	}
 	
+	@Test
+	public void testAvancaLetra() {
+		Character letra = UtilInterviewQuestions.avancaLetra('W', 87);
+		assertEquals('F', letra);
+	}
+	
 }
