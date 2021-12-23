@@ -451,18 +451,16 @@ public class UtilInterviewQuestions {
 	
 	public static String caesarCipher(String frase, int casas) {
 		var sb = new StringBuilder();
-		casas  = casas > 26 ? casas % 26 : casas;
 
-		int limite  = 0;
 		for(int i = 0; i < frase.length(); i++) {
 			char letra = frase.charAt(i);
 			
 			if(Character.isLetter(letra)) {
 				if(Character.isUpperCase(letra)) {
-					limite  = (int) (letra + casas);
-					limite = (limite > 90) ? limite -= 25 : limite;
+					sb.append(avancaLetra(letra, casas));
+				}else {
+					sb.append(Character.toLowerCase(avancaLetra(Character.toUpperCase(letra), casas)));
 				}
-				sb.append((char) (letra + casas));
 			}else {
 				sb.append(letra);
 			}

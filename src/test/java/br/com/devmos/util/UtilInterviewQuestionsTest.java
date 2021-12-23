@@ -4,7 +4,6 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
@@ -121,7 +120,13 @@ public class UtilInterviewQuestionsTest {
 	@Test
 	public void testAvancaLetra() {
 		Character letra = UtilInterviewQuestions.avancaLetra('W', 87);
-		assertEquals('F', letra);
+		assertEquals(Character.valueOf('F'), letra);
+	}
+	
+	@Test
+	public void testCaesarCipher() {
+		String mensagemCifrada = UtilInterviewQuestions.caesarCipher("middle-Outz", 2);
+		assertEquals("okffng-Qwvb", mensagemCifrada);
 	}
 	
 }
