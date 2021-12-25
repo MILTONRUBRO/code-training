@@ -129,4 +129,10 @@ public class UtilInterviewQuestionsTest {
 		assertEquals("okffng-Qwvb", mensagemCifrada);
 	}
 	
+	@Test
+	public void testCaesarCipherWitNegativeNumers() {
+		String mensagemCifrada = UtilInterviewQuestions.caesarCipher("milton", -2);
+		assertEquals("kgjrml", mensagemCifrada);
+	}
+	
 }
