@@ -102,4 +102,14 @@ public class UtilNumbers {
 		
 		return factorial(num - 1) * num;
 	}
+	
+	public static void minAndMax(List<Integer> numbers) {
+		numbers.sort(Comparator.comparing(Integer::intValue));
+		int sumMax = numbers.stream().mapToInt(i -> i).sum() - numbers.get(0);
+		int sumMin = numbers.stream().mapToInt(i -> i).sum() - numbers.get(numbers.size()-1);
+
+		System.out.println("Max: " + sumMax);
+		System.out.println("Min: " + sumMin);
+
+	}
 }
