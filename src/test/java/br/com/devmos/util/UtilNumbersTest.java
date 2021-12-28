@@ -111,4 +111,11 @@ public class UtilNumbersTest {
 		assertEquals(120, factorial);
 	}
 	
+	@Test
+	public void tetMinAndMaxOk(){
+		var numbers = List.of(6,87,78,3,4);
+		UtilNumbers.minAndMax(numbers);
+		assertFalse(numbers.isEmpty());
+	}
+	
 }
