@@ -3,6 +3,7 @@ package br.com.devmos.util;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class UtilNumbers {
 	
@@ -111,5 +112,9 @@ public class UtilNumbers {
 		System.out.println("Max: " + sumMax);
 		System.out.println("Min: " + sumMin);
 
+	}
+	
+	public static List<Integer> removeAllNegativeNumbers(List<Integer> numbers) {
+		 return numbers.stream().filter(n -> n > 0).collect(Collectors.toList());
 	}
 }
