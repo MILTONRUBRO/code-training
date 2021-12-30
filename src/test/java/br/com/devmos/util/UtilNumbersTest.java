@@ -5,6 +5,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
@@ -112,10 +113,17 @@ public class UtilNumbersTest {
 	}
 	
 	@Test
-	public void tetMinAndMaxOk(){
-		var numbers = List.of(6,87,78,3,4);
+	public void testMinAndMaxOk(){
+		var numbers = Arrays.asList(6,87,78,3,4);
 		UtilNumbers.minAndMax(numbers);
 		assertFalse(numbers.isEmpty());
+	}
+	
+	@Test
+	public void testRemoveAllNegativeNumbers(){
+		var numbers = Arrays.asList(1, -2, -3, 7);
+		List<Integer> removeAllNegativeNumbers = UtilNumbers.removeAllNegativeNumbers(numbers);
+		assertEquals(2, removeAllNegativeNumbers.size());
 	}
 	
 }
