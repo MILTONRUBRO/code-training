@@ -117,4 +117,8 @@ public class UtilNumbers {
 	public static List<Integer> removeAllNegativeNumbers(List<Integer> numbers) {
 		 return numbers.stream().filter(n -> n > 0).collect(Collectors.toList());
 	}
+	
+	public static List<Integer> removeAllOddNumbers(List<Integer> numbers){
+		return numbers.stream().filter(n -> n % 2 == 0).collect(Collectors.toList());
+	}
 }
