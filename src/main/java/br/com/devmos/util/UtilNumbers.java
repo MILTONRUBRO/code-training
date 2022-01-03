@@ -1,5 +1,6 @@
 package br.com.devmos.util;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
@@ -120,5 +121,17 @@ public class UtilNumbers {
 	
 	public static List<Integer> removeAllOddNumbers(List<Integer> numbers){
 		return numbers.stream().filter(n -> n % 2 == 0).collect(Collectors.toList());
+	}
+	
+	public static Integer token() {
+		StringBuilder sb = new StringBuilder();
+		int[] numbers = new Random().ints(0, 10)
+									.limit(6)
+									.toArray();
+		Arrays.stream(numbers).forEach(n -> {
+			sb.append(n);
+		});
+		
+		return Integer.valueOf(sb.toString());
 	}
 }
