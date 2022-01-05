@@ -2,6 +2,7 @@ package br.com.devmos.util;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
@@ -126,4 +127,9 @@ public class UtilNumbersTest {
 		assertEquals(2, removeAllNegativeNumbers.size());
 	}
 	
+	@Test
+	public void testToken(){
+		Integer token = UtilNumbers.token();
+		assertNotNull(token);
+	}
 }
