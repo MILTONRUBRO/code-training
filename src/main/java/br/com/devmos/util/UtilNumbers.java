@@ -134,4 +134,12 @@ public class UtilNumbers {
 		
 		return Integer.valueOf(sb.toString());
 	}
+	
+	public static String getMegaSena() {
+		var sb = new StringBuilder();
+		
+		new Random().ints(1, 61).limit(6).forEach(n -> sb.append(n).append(" "));
+		
+		return sb.toString();
+	}
 }

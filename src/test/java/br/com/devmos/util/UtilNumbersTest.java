@@ -132,4 +132,10 @@ public class UtilNumbersTest {
 		Integer token = UtilNumbers.token();
 		assertNotNull(token);
 	}
+	
+	@Test
+	public void testGetMegaSena(){
+		String megaSena = UtilNumbers.getMegaSena();
+		assertFalse(megaSena.isEmpty());
+	}
 }
