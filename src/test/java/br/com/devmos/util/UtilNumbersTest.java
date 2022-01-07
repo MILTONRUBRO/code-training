@@ -138,4 +138,11 @@ public class UtilNumbersTest {
 		String megaSena = UtilNumbers.getMegaSena();
 		assertFalse(megaSena.isEmpty());
 	}
+	
+	@Test
+	public void testGenerateAuthenticator(){
+		String pass = UtilNumbers.generateAuthenticator();
+		assertFalse(pass.isEmpty());
+		assertEquals(6, pass.length());
+	}
 }

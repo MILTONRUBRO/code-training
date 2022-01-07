@@ -142,4 +142,13 @@ public class UtilNumbers {
 		
 		return sb.toString();
 	}
+	
+	public static String generateAuthenticator() {
+		var sb = new StringBuilder();
+		
+		new Random().ints(0, 10).limit(6).forEach(n -> sb.append(n));
+		
+		return sb.toString();
+	}
 }
+
