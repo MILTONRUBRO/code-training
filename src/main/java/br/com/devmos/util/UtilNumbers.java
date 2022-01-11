@@ -125,13 +125,9 @@ public class UtilNumbers {
 	
 	public static Integer token() {
 		StringBuilder sb = new StringBuilder();
-		int[] numbers = new Random().ints(0, 10)
-									.limit(6)
-									.toArray();
-		Arrays.stream(numbers).forEach(n -> {
-			sb.append(n);
-		});
-		
+		new Random().ints(0, 10).limit(6)
+								.forEach( n -> sb.append(n));
+	
 		return Integer.valueOf(sb.toString());
 	}
 	

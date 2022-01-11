@@ -128,6 +128,13 @@ public class UtilNumbersTest {
 	}
 	
 	@Test
+	public void testRemoveAllOddNumbers() {
+		var numbers = List.of(6,2,4,7,1);
+		List<Integer> list = UtilNumbers.removeAllOddNumbers(numbers);
+		assertEquals(List.of(6,2,4), list);
+	}
+	
+	@Test
 	public void testToken(){
 		Integer token = UtilNumbers.token();
 		assertNotNull(token);
