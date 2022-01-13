@@ -12,11 +12,8 @@ public class UtilNumbers {
 	}
 	
 	public static String geraSenhaNumerica(int tamanho) {
-		var random = new Random();
 		StringBuilder sb = new StringBuilder();
-		for(var i = 0; i < tamanho; i++) {
-			sb.append(random.nextInt(10));
-		}
+		new Random().ints(0, 10).limit(tamanho).forEach(n -> sb.append(n));
 		return sb.toString();
 	}
 	
