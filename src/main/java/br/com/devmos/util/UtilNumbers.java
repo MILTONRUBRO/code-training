@@ -1,6 +1,5 @@
 package br.com.devmos.util;
 
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
@@ -9,8 +8,7 @@ import java.util.stream.Collectors;
 public class UtilNumbers {
 	
 	public static int numeroAleatorio(int min, int max) {
-		var random = new Random();
-		return random.nextInt((max - min) + 1) + min;
+		return new Random().ints(min, max + 1).findFirst().getAsInt();
 	}
 	
 	public static String geraSenhaNumerica(int tamanho) {
