@@ -23,15 +23,13 @@ public class UtilNumbers {
 		for(var i = 0; i < tamanho; i++) {
 			sb.append((char) (random.nextInt(26) + 'a'));
 		}
+		
 		return sb.toString();
 	}
 	
 	public static String geraPlacaVeiculo() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(geraSenhaLetras(3));
-		sb.append("-");
-		sb.append(geraSenhaNumerica(4));
-		
+		sb.append(geraSenhaLetras(3)).append("-").append(geraSenhaNumerica(4));		
 		return sb.toString();
 	}
 	
