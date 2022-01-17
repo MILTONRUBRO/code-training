@@ -1,5 +1,6 @@
 package br.com.devmos.util;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
@@ -138,6 +139,10 @@ public class UtilNumbers {
 		new Random().ints(0, 10).limit(6).forEach(n -> sb.append(n));
 		
 		return sb.toString();
+	}
+	
+	public static Integer candles(List<Integer> candles) {
+		return (int) candles.stream().filter(n -> n.equals(Collections.max(candles))).count();
 	}
 }
 
