@@ -152,4 +152,11 @@ public class UtilNumbersTest {
 		assertFalse(pass.isEmpty());
 		assertEquals(6, pass.length());
 	}
+	
+	@Test
+	public void testGetCandles(){
+		var numbers = List.of(3,2,4,2,1,5,5,5);
+		Integer candles = UtilNumbers.candles(numbers);
+		assertEquals(Integer.valueOf(3), candles);
+	}
 }
