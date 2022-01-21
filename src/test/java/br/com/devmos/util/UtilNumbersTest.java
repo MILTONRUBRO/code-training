@@ -159,4 +159,21 @@ public class UtilNumbersTest {
 		Integer candles = UtilNumbers.candles(numbers);
 		assertEquals(Integer.valueOf(3), candles);
 	}
+	
+	
+	@Test
+	public void testDiagonalDifference() {
+		List<List<Integer>> matrix = new ArrayList<List<Integer>>();
+		
+		var row1 = List.of(11, 2, 4);
+		var row2 = List.of(4, 5, 6);
+		var row3 = List.of(10, 8, -12);
+		
+		matrix.add(row1);
+		matrix.add(row2);
+		matrix.add(row3);
+		
+		int result = UtilNumbers.diagonalDifference(matrix);
+		assertEquals(15, result);
+	}
 }

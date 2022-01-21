@@ -144,5 +144,17 @@ public class UtilNumbers {
 	public static Integer candles(List<Integer> candles) {
 		return (int) candles.stream().filter(n -> n.equals(Collections.max(candles))).count();
 	}
+	
+	public static int diagonalDifference(List<List<Integer>> arr) {
+		int leftSum = 0;
+		int rightSum = 0;
+		
+		for(int row = 0, col = 0; row < arr.size(); row++, col++) {
+			leftSum = leftSum + arr.get(row).get(row);
+			rightSum = rightSum + arr.get(row).get(arr.size() - 1 - row);
+		}
+		
+		return Math.abs(leftSum - rightSum);
+	}
 }
 
