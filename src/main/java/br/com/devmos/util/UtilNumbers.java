@@ -24,7 +24,7 @@ public class UtilNumbers {
 		for(var i = 0; i < tamanho; i++) {
 			sb.append((char) (random.nextInt(26) + 'a'));
 		}
-		
+				
 		return sb.toString();
 	}
 	
@@ -35,11 +35,8 @@ public class UtilNumbers {
 	}
 	
 	public static String geraCEP() {
-		var random = new Random();
 		var sb = new StringBuilder();
-		for(var i = 0; i < 8; i++) {
-			sb.append(random.nextInt(10));
-		}
+		new Random().ints(0, 10).limit(8).forEach( n -> sb.append(n));
 		sb.insert(5, "-");
 		return sb.toString();
 	}
