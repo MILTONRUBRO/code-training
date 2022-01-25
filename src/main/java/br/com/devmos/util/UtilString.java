@@ -71,8 +71,7 @@ public class UtilString {
 	
 	
 	public static String getRandomNameFromList(List<String> names) {
-		Random random = new Random();
-		int number = random.nextInt(names.size());
+		int number = new Random().nextInt(names.size());
 		return names.get(number);
 	}
 	
@@ -105,8 +104,7 @@ public class UtilString {
 	}
 
 	private static boolean isVowel(char ch) {
-		ch = Character.toUpperCase(ch);
-		
+		ch = Character.toUpperCase(ch);		
 		return (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U');
 	}
 	
