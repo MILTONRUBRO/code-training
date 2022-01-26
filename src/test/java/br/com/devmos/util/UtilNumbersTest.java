@@ -176,4 +176,11 @@ public class UtilNumbersTest {
 		int result = UtilNumbers.diagonalDifference(matrix);
 		assertEquals(15, result);
 	}
+	
+	@Test
+    public void testBinaryToIntOk() {
+		int num = UtilNumbers.binaryToInt("100001011");
+		assertEquals(267, num);
+    }
+
 }

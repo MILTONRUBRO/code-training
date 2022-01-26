@@ -153,5 +153,9 @@ public class UtilNumbers {
 		
 		return Math.abs(leftSum - rightSum);
 	}
+	
+    public static int binaryToInt(String str) {
+    	return Integer.parseInt(str, 2);
+    }
 }
 
