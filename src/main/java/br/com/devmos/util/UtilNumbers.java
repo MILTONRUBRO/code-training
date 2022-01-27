@@ -154,8 +154,12 @@ public class UtilNumbers {
 		return Math.abs(leftSum - rightSum);
 	}
 	
-    public static int binaryToInt(String str) {
+    public static int binaryToDecimal(String str) {
     	return Integer.parseInt(str, 2);
+    }
+    
+    public static String decimalToBinary(int num) {
+    	return Integer.toBinaryString(num);
     }
 }
 

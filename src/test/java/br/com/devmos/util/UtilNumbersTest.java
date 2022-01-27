@@ -178,8 +178,8 @@ public class UtilNumbersTest {
 	}
 	
 	@Test
-    public void testBinaryToIntOk() {
-		int num = UtilNumbers.binaryToInt("100001011");
+    public void testBinaryToDecimalOk() {
+		int num = UtilNumbers.binaryToDecimal("100001011");
 		assertEquals(267, num);
     }
 
