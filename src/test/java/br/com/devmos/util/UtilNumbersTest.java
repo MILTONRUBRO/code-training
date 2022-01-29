@@ -182,5 +182,11 @@ public class UtilNumbersTest {
 		int num = UtilNumbers.binaryToDecimal("100001011");
 		assertEquals(267, num);
     }
+	
+	@Test
+    public void testDecimalToBinary() {
+		String binary = UtilNumbers.decimalToBinary(11);
+		assertEquals("1011", binary);
+	}
 
 }
