@@ -126,7 +126,7 @@ public class UtilString {
     static String encryptString(String s, int k) {
         int countVowels = 0;
         int countConsonants = 0;
-        String ans = "";
+        var  ans = new StringBuilder();
         int size = s.length();
  
         for (int i = 0; i <= size - k; i++) {
@@ -141,9 +141,9 @@ public class UtilString {
                 }
             }
  
-            ans += String.valueOf(countVowels * countConsonants);
+            ans.append(String.valueOf(countVowels * countConsonants));
         }
-        return ans;
+        return ans.toString();
     }
     
     public static boolean isCommonSubstring(String s1, String s2) {
