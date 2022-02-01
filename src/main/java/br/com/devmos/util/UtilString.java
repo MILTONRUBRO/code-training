@@ -162,5 +162,19 @@ public class UtilString {
     	return false;
     	
     }
+    
+    public static Set<String> permuteAndStore(String prefix, String str){
+    	Set<String> permutations = new HashSet<>();
+    	int size = str.length();
+    	
+    	if(size == 0) {
+    		permutations.add(prefix);
+    	}else {
+    		for(int i = 0; i < size; i++) {
+    			permutations.addAll(permuteAndStore(prefix + str.charAt(i), str.substring(i + 1, size) + str.substring(0, i)));
+    		}
+    	}
+    	return permutations;
+    }
 
 }
