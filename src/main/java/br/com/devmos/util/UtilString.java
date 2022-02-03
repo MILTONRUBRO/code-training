@@ -1,5 +1,8 @@
 package br.com.devmos.util;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -175,6 +178,18 @@ public class UtilString {
     		}
     	}
     	return permutations;
+    }
+    
+    public static String getSecurePasword(String password, String salt) throws NoSuchAlgorithmException {
+    	MessageDigest md = MessageDigest.getInstance("SHA-512");
+    	
+    	md.update(salt.getBytes(StandardCharsets.UTF_8));
+    	byte[] bytes = md.digest(password.getBytes(StandardCharsets.UTF_8));
+    	var sb = new StringBuilder();
+    	for(int i = 0; i < bytes.length; i++) {
+    		sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16 ).substring(1));
+    	}
+    	return sb.toString();
     }
 
 }
