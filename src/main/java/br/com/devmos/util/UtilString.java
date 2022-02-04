@@ -191,5 +191,10 @@ public class UtilString {
     	}
     	return sb.toString();
     }
+    
+    public static int countStringInString(String str, String toFind) {
+    	int result = str.split(Pattern.quote(toFind), -1).length - 1;
+    	return result < 0 ? 0 : result;
+    }
 
 }
