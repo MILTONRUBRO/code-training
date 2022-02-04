@@ -6,6 +6,7 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import java.nio.CharBuffer;
+import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
@@ -171,5 +172,11 @@ public class UtilStringTest {
 	public void testIsCommonSubstringFAlse() {
 		boolean isCommon = UtilString.isCommonSubstring("lucario", "eevee");
 		assertFalse(isCommon);
+	}
+	
+	@Test
+	public void testGetSecurePasword() throws NoSuchAlgorithmException {
+		String securePasword = UtilString.getSecurePasword("password", "2");
+		assertFalse(securePasword.isEmpty());
 	}
 }
