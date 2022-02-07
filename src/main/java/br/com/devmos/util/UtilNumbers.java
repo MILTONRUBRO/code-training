@@ -161,5 +161,9 @@ public class UtilNumbers {
     public static String decimalToBinary(int num) {
     	return Integer.toBinaryString(num);
     }
+    
+    public static double getLog2(double num) {
+    	return Math.log(num);
+    }
 }
 
