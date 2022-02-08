@@ -162,7 +162,7 @@ public class UtilNumbers {
     	return Integer.toBinaryString(num);
     }
     
-    public static double getLog2(double num) {
+    public static double getLogNeperiano(double num) {
     	return Math.log(num);
     }
 }

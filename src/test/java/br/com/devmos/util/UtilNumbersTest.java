@@ -188,5 +188,11 @@ public class UtilNumbersTest {
 		String binary = UtilNumbers.decimalToBinary(11);
 		assertEquals("1011", binary);
 	}
+	
+	@Test
+	public void testGetLogNeperiano(){
+		double result = UtilNumbers.getLogNeperiano(100);
+		assertEquals(4.6051, result, 0.0001);
+	}
 
 }
