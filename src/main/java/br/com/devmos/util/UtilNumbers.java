@@ -165,5 +165,9 @@ public class UtilNumbers {
     public static double getLogNeperiano(double num) {
     	return Math.log(num);
     }
+    
+    public static double calcHipotenusa(double x, double y) {
+    	return Math.hypot(x, y);
+    }
 }
 
