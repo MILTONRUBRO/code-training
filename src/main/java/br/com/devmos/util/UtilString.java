@@ -196,5 +196,9 @@ public class UtilString {
     	int result = str.split(Pattern.quote(toFind), -1).length - 1;
     	return result < 0 ? 0 : result;
     }
+    
+    public static String revert(String str) {
+    	return new StringBuilder(str).reverse().toString();
+    }
 
 }
