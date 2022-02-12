@@ -179,4 +179,10 @@ public class UtilStringTest {
 		String securePasword = UtilString.getSecurePasword("password", "2");
 		assertFalse(securePasword.isEmpty());
 	}
+	
+	@Test
+	public void testRevert() {
+		String reverted = UtilString.revert(NAME);
+		assertEquals("rangaR", reverted);
+	}
 }
