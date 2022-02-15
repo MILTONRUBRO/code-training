@@ -194,5 +194,19 @@ public class UtilNumbersTest {
 		double result = UtilNumbers.getLogNeperiano(100);
 		assertEquals(4.6051, result, 0.0001);
 	}
+	
+	@Test
+	public void testFlippingMatrix() {
+		List<List<Integer>> matrix = new ArrayList<List<Integer>>();
+		
+		var row1 = List.of(2, 2);
+		var row2 = List.of(4, 3);
+		
+		matrix.add(row1);
+		matrix.add(row2);
+		
+		int result = UtilNumbers.flippingMatrix(matrix);
+		assertEquals(4, result);
+	}
 
 }
