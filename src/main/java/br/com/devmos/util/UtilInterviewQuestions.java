@@ -9,6 +9,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 
+import br.com.devmos.model.Tabela;
+
 
 public class UtilInterviewQuestions {
 	
@@ -481,5 +483,32 @@ public class UtilInterviewQuestions {
 		
 		return alfabeto.get(limite);
 	}
+    
+    /**
+     *  a tesoura corta o papel;
+		o papel embrulha a pedra;
+		a pedra esmaga o lagarto;
+		o lagarto envenena Spock;
+		Spock destrói a tesoura;
+		a tesoura decapita o lagarto;
+		o lagarto come o papel;
+		o papel contesta Spock;
+		Spock vaporiza a pedra;
+		a pedra quebra a tesoura.
+     */
+    
+    public static String lizardSpockGame(String player1, String player2) {
+    	List<Tabela> games = Tabela.getTabelaGames();
+    	
+    	if(player1.equalsIgnoreCase(player2)) {
+    		return "De novo!";
+    	}
+    	
+    	return games.stream()
+    		 .filter(g -> g.getJ1().equalsIgnoreCase(player1) && g.getJ2().equalsIgnoreCase(player2))
+    		 .findFirst()
+    		 .get()
+    		 .getMsg();
+    }
 
 }
