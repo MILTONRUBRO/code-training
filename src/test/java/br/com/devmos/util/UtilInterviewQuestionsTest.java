@@ -135,4 +135,22 @@ public class UtilInterviewQuestionsTest {
 		assertEquals("kgjrml", mensagemCifrada);
 	}
 	
+	@Test
+	public void testLizardSpockGameDraw() {
+		String result = UtilInterviewQuestions.lizardSpockGame("lagarto", "lagarto");
+		assertEquals("De novo!", result);
+	}
+	
+	@Test
+	public void testLizardSpockGameSheldonWins() {
+		String result = UtilInterviewQuestions.lizardSpockGame("lagarto", "papel");
+		assertEquals("Bazinga!", result);
+	}
+	
+	@Test
+	public void testLizardSpockGameRajWins() {
+		String result = UtilInterviewQuestions.lizardSpockGame("papel", "lagarto");
+		assertEquals("Raj trapaceou!", result);
+	}
+	
 }
