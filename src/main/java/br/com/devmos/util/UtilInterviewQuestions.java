@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.Stack;
 
@@ -507,7 +508,7 @@ public class UtilInterviewQuestions {
     	return games.stream()
     		 .filter(g -> g.getJ1().equalsIgnoreCase(player1) && g.getJ2().equalsIgnoreCase(player2))
     		 .findFirst()
-    		 .get()
+    		 .orElseThrow(NoSuchElementException::new)
     		 .getMsg();
     }
 
