@@ -511,5 +511,10 @@ public class UtilInterviewQuestions {
     		 .orElseThrow(NoSuchElementException::new)
     		 .getMsg();
     }
+    
+    public static String removeNoAlphabet(String frase) {
+    	String regex = "[^A-Za-z0-9]";
+    	return frase.replaceAll(regex, "");
+    }
 
 }

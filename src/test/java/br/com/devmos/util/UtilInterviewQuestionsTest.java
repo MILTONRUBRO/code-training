@@ -153,4 +153,10 @@ public class UtilInterviewQuestionsTest {
 		assertEquals("Raj trapaceou!", result);
 	}
 	
+	
+	@Test
+	public void testRemoveNoAlphabet() {
+		String frase = UtilInterviewQuestions.removeNoAlphabet("ola, como voce esta hoje");
+		assertEquals("olacomovoceestahoje", frase);
+	}
 }
