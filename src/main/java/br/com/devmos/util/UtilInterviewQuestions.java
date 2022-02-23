@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.Stack;
+import java.util.stream.Collectors;
 
 import br.com.devmos.model.Tabela;
 
@@ -515,6 +516,28 @@ public class UtilInterviewQuestions {
     public static String removeNoAlphabet(String frase) {
     	String regex = "[^A-Za-z0-9]";
     	return frase.replaceAll(regex, "");
+    }
+    
+    public static String contaLetras(String frase) {
+    	String str = removeNoAlphabet(frase);
+    	Set<Character> letras = new HashSet<>();
+    	
+    	for(int i = 0; i < str.length(); i++) {
+    		letras.add(str.charAt(i));
+    	}
+    	
+    	int size = letras.size();
+    	String msg = "";
+    	
+    	if(size == 26) {
+    		msg = "frase completa";
+    	}else if(size >= 13) {
+    		msg = "frase quase completa";
+    	}else {
+    		msg = "frase mal elaborada";
+    	}
+    	    	
+    	return msg;
     }
 
 }
