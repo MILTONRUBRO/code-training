@@ -159,4 +159,16 @@ public class UtilInterviewQuestionsTest {
 		String frase = UtilInterviewQuestions.removeNoAlphabet("ola, como voce esta hoje");
 		assertEquals("olacomovoceestahoje", frase);
 	}
+	
+	@Test
+	public void testContaLetrasMalElaborada() {
+		String contaLetras = UtilInterviewQuestions.contaLetras("ola, como voce esta hoje");
+		assertEquals("frase mal elaborada", contaLetras);
+	}
+	
+	@Test
+	public void testContaLetras() {
+		String contaLetras = UtilInterviewQuestions.contaLetras("hoje fui na feira, e comprei banana, melao e abacates");
+		assertEquals("frase quase completa", contaLetras);
+	}
 }
