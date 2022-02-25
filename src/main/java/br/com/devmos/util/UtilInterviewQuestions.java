@@ -539,5 +539,24 @@ public class UtilInterviewQuestions {
     	    	
     	return msg;
     }
+    
+    /**
+     * Sherlock considers a string to be valid if all characters of the string appear 
+     * the same number of times
+     * @param frase
+     */
+    public static void sherlockString(String frase) {
+    	Map<Character, Integer> quantidadeLetras = new HashMap<>();
+    	
+    	for(int i = 0; i < frase.length(); i++) {
+    		Character letra = frase.charAt(i);
+    		
+    		if(quantidadeLetras.containsKey(letra)) {
+    			quantidadeLetras.put(letra,  quantidadeLetras.get(letra) + 1);
+    		}else {
+        		quantidadeLetras.put(letra, 1);
+    		}
+    	}
+    }
 
 }
