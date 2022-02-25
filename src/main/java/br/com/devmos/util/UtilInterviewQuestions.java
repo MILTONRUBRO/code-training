@@ -2,6 +2,7 @@ package br.com.devmos.util;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -544,8 +545,9 @@ public class UtilInterviewQuestions {
      * Sherlock considers a string to be valid if all characters of the string appear 
      * the same number of times
      * @param frase
+     * @return 
      */
-    public static void sherlockString(String frase) {
+    public static String sherlockString(String frase) {
     	Map<Character, Integer> quantidadeLetras = new HashMap<>();
     	
     	for(int i = 0; i < frase.length(); i++) {
@@ -557,6 +559,27 @@ public class UtilInterviewQuestions {
         		quantidadeLetras.put(letra, 1);
     		}
     	}
+    	
+    	List<Integer> quantidades = new ArrayList<>(quantidadeLetras.values());
+    	Integer max = Collections.max(quantidades);
+    	Integer min = Collections.min(quantidades);
+    	
+    	if(max == min) {
+    		return "YES";
+    	}
+    	
+    	int minCount  = 0;
+    	int maxCount = 0;
+    	
+    	for(int i = 0; i < quantidades.size(); i++) {
+    		if(quantidades.get(i) == max) {
+    			maxCount++;
+    		}else if(quantidades.get(i) == min) {
+    			minCount++;
+    		}
+    	}
+    	
+    	return (minCount == 1 || (maxCount == 1 && max == min+1)) ? "YES" : "NO";
     }
 
 }

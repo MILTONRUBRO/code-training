@@ -171,4 +171,16 @@ public class UtilInterviewQuestionsTest {
 		String contaLetras = UtilInterviewQuestions.contaLetras("hoje fui na feira, e comprei banana, melao e abacates");
 		assertEquals("frase quase completa", contaLetras);
 	}
+	
+	@Test
+	public void testSherlockStringNo() {
+		String sherlockString = UtilInterviewQuestions.sherlockString("aabbcd");
+		assertEquals("NO", sherlockString);
+	}
+	
+	@Test
+	public void testSherlockStringYes() {
+		String sherlockString = UtilInterviewQuestions.sherlockString("aabbccc");
+		assertEquals("YES", sherlockString);
+	}
 }
