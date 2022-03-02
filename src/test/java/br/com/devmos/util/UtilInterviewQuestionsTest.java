@@ -183,4 +183,10 @@ public class UtilInterviewQuestionsTest {
 		String sherlockString = UtilInterviewQuestions.sherlockString("aabbccc");
 		assertEquals("YES", sherlockString);
 	}
+	
+	@Test
+	public void testSundayMorning() {
+		String sundayMorning = UtilInterviewQuestions.sundayMorning("09:30");
+		assertEquals("Atraso maximo: 12030", sundayMorning);
+	}
 }
