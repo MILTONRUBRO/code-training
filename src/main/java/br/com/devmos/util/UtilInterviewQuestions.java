@@ -596,5 +596,21 @@ public class UtilInterviewQuestions {
 		};
 
     }
+    
+    public static String fasesLua(int start, int end) {
+        String fase = "";
+        
+    	if (start >= 0 && end <= 2) {
+            fase = "nova";
+        } else if (end > start && end <= 96) {
+            fase = "crescente";
+        } else if (start >= end && end <= 96) {
+            fase = "minguante";
+        } else { 
+            fase = "cheia";
+        }
+    	
+    	return fase;
+    }
 
 }
