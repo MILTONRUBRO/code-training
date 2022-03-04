@@ -189,4 +189,10 @@ public class UtilInterviewQuestionsTest {
 		String sundayMorning = UtilInterviewQuestions.sundayMorning("09:30");
 		assertEquals("Atraso maximo: 12030", sundayMorning);
 	}
+	
+	@Test
+	public void testFasesLua() {
+		String fase = UtilInterviewQuestions.fasesLua(2, 95);
+		assertEquals("crescente", fase);
+	}
 }
