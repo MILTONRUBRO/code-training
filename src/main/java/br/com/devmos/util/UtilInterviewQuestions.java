@@ -618,24 +618,79 @@ public class UtilInterviewQuestions {
     	StringBuilder crypt = new StringBuilder();
     	
     	frase = frase.replaceAll(" ", "").trim();
+    	
+    	var hashRA = getHashRA();
 		
 		for(int i = 0; i < frase.length(); i++) {
 			
 			char c = frase.charAt(i);
 			
 			if (crypt.length() == 12) break;
-			if (c == 'G' || c == 'Q' || c == 'a' || c == 'k' || c == 'u')                  crypt.append('0');
-			else if (c == 'I' || c == 'S' || c == 'b' || c == 'l' || c == 'v')             crypt.append('1');
-			else if (c == 'E' || c == 'O' || c == 'Y' || c == 'c' || c == 'm' || c == 'w') crypt.append('2');
-			else if (c == 'F' || c == 'P' || c == 'Z' || c == 'd' || c == 'n' || c == 'x') crypt.append('3');
-			else if (c == 'J' || c == 'T' || c == 'e' || c == 'o' || c == 'y')             crypt.append('4');
-			else if (c == 'D' || c == 'N' || c == 'X' || c == 'f' || c == 'p' || c == 'z') crypt.append('5');
-			else if (c == 'A' || c == 'K' || c == 'U' || c == 'g' || c == 'q')             crypt.append('6');
-			else if (c == 'C' || c == 'M' || c == 'W' || c == 'h' || c == 'r')             crypt.append('7');
-			else if (c == 'B' || c == 'L' || c == 'V' || c == 'i' || c == 's')             crypt.append('8');
-			else if (c == 'H' || c == 'R' || c == 'j' || c == 't')                         crypt.append('9');
+			
+			if(hashRA.containsKey(c)) crypt.append(hashRA.get(c));
+
 		}
 		return crypt.toString();
+    }
+    
+    public static Map<Character, Character> getHashRA() {
+     	
+    	return new HashMap<Character, Character>(){{
+    	    put('G', '0');
+    	    put('Q', '0');
+    	    put('a', '0');
+    	    put('k', '0');
+    	    put('u', '0');
+    	    put('I', '1');
+    	    put('S' ,'1');
+    	    put('b', '1');
+    	    put('l', '1');
+    	    put('v', '1');
+    	    put('E', '2');
+    	    put('O' ,'2');
+    	    put('Y', '2');
+    	    put('c', '2');
+    	    put('m', '2');
+    	    put('w', '2');
+    	    put('F', '3');
+    	    put('P' ,'3');
+    	    put('Z', '3');
+    	    put('d', '3');
+    	    put('n', '3');
+    	    put('x', '3');
+    	    put('J', '4');
+    	    put('T' ,'4');
+    	    put('e', '4');
+    	    put('o', '4');
+    	    put('y', '4');
+    	    put('D', '5');
+    	    put('N', '5');
+    	    put('X' ,'5');
+    	    put('f', '5');
+    	    put('p', '5');
+    	    put('z', '5');
+    	    put('A', '6');
+    	    put('K', '6');
+    	    put('U' ,'6');
+    	    put('g', '6');
+    	    put('q', '6');
+    	    put('C', '7');
+    	    put('M', '7');
+    	    put('W' ,'7');
+    	    put('h', '7');
+    	    put('r', '7');
+    	    put('B', '8');
+    	    put('L', '8');
+    	    put('V' ,'8');
+    	    put('i', '8');
+    	    put('s', '8');
+    	    put('H', '9');
+    	    put('R', '9');
+    	    put('j' ,'9');
+    	    put('t', '9');
+    	    
+    	}};
+    	
     }
 
 }
