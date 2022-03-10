@@ -195,4 +195,16 @@ public class UtilInterviewQuestionsTest {
 		String fase = UtilInterviewQuestions.fasesLua(2, 95);
 		assertEquals("crescente", fase);
 	}
+	
+	@Test
+	public void testGetPasswordRa() {
+		String passwordRa = UtilInterviewQuestions.getPasswordRa("o rato roeu a roupa de margarida");
+		assertEquals("470947440074", passwordRa);
+	}
+	
+	@Test
+	public void testGetPasswordRaSecondPhrase() {
+		String passwordRa = UtilInterviewQuestions.getPasswordRa("OlA TuDo CeRtO");
+		assertEquals("216405474992", passwordRa);
+	}
 }
