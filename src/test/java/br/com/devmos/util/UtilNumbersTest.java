@@ -214,5 +214,11 @@ public class UtilNumbersTest {
 		double hiponetusa = UtilNumbers.calcHipotenusa(2, 3);
 		assertEquals(3.605551, hiponetusa, 0.0001);
 	}
+	
+	@Test
+	public void testRemoveNonNumbers() {
+		String number = UtilNumbers.removeNonNumerics("11#$%11111*&¨1111&*(");
+		assertEquals("11111111111", number);
+	}
 
 }

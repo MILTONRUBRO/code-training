@@ -186,5 +186,10 @@ public class UtilNumbers {
           }
           return sum;
     }
+    
+    public static String removeNonNumerics(String str) {
+    	String regex = "-?[^\\d]";
+    	return str.replaceAll(regex, "");
+    }
 }
 
