@@ -208,5 +208,11 @@ public class UtilNumbersTest {
 		int result = UtilNumbers.flippingMatrix(matrix);
 		assertEquals(4, result);
 	}
+	
+	@Test
+	public void testCalcHipotenusa() {
+		double hiponetusa = UtilNumbers.calcHipotenusa(2, 3);
+		assertEquals(3.605551, hiponetusa, 0.0001);
+	}
 
 }
