@@ -691,5 +691,14 @@ public class UtilInterviewQuestions {
     	}};
     	
     }
+    
+    public static String validPassword(String password) {
+    	if(password.contains(" ")) return "Senha invalida";
+    	return "Senha valida";
+    }
+    
+    public static int getAsc(Character c) {
+    	return c;
+    }
 
 }
