@@ -207,4 +207,10 @@ public class UtilInterviewQuestionsTest {
 		String passwordRa = UtilInterviewQuestions.getPasswordRa("OlA TuDo CeRtO");
 		assertEquals("216405474992", passwordRa);
 	}
+	
+	@Test
+	public void testGetAsc() {
+		int asc = UtilInterviewQuestions.getAsc('A');
+		assertEquals(65, asc);
+	}
 }
