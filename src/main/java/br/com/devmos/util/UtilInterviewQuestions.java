@@ -694,6 +694,10 @@ public class UtilInterviewQuestions {
     
     public static String validPassword(String password) {
     	if(password.contains(" ")) return "Senha invalida";
+    	
+    	if(password.length() < 6 || password.length() > 32) return "Senha invalida";
+    	
+    	
     	return "Senha valida";
     }
     
