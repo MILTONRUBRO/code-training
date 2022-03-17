@@ -200,5 +200,11 @@ public class UtilString {
     public static String revert(String str) {
     	return new StringBuilder(str).reverse().toString();
     }
+    
+    public static List<String> getNamesWithDeterminateLetter(String letter, List<String> names) {
+    	return names.stream()
+    				.filter(name -> name.startsWith(letter))
+    				.collect(Collectors.toList());
+    }
 
 }

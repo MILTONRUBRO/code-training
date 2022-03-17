@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.Stack;
+import java.util.function.Predicate;
 
 import br.com.devmos.model.Tabela;
 
@@ -704,5 +705,5 @@ public class UtilInterviewQuestions {
     public static int getAsc(Character c) {
     	return c;
     }
-
+    
 }
