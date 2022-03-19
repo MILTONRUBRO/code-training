@@ -2,10 +2,8 @@ package br.com.devmos.util;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-import java.nio.CharBuffer;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.List;
@@ -184,5 +182,14 @@ public class UtilStringTest {
 	public void testRevert() {
 		String reverted = UtilString.revert(NAME);
 		assertEquals("rangaR", reverted);
+	}
+	
+	@Test
+	public void testGetNamesWithDeterminateLetter() {
+		List<String> names = List.of("Jose", "Ana", "Antonio");
+		List<String> response = UtilString.getNamesWithDeterminateLetter("A", names);
+		
+		assertTrue(response.contains("Ana"));
+		assertTrue(response.contains("Antonio"));
 	}
 }
