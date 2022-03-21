@@ -3,6 +3,7 @@ package br.com.devmos.util;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -11,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
+import java.util.function.Predicate;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
@@ -205,6 +207,17 @@ public class UtilString {
     	return names.stream()
     				.filter(name -> name.startsWith(letter))
     				.collect(Collectors.toList());
+    }
+    
+    public static List<String> filterListWithCollectionOfPredicatesUsingAnd(List<String> names){
+        List<Predicate<String>> allPredicates = new ArrayList<>();
+        allPredicates.add(str -> str.startsWith("A"));
+        allPredicates.add(str -> str.contains("d"));        
+        allPredicates.add(str -> str.length() > 4);
+        
+        return names.stream()
+        			.filter(allPredicates.stream().reduce(x -> true, Predicate::and))
+        			.collect(Collectors.toList());
     }
 
 }
