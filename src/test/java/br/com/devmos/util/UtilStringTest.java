@@ -2,6 +2,7 @@ package br.com.devmos.util;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import java.security.NoSuchAlgorithmException;
@@ -191,5 +192,14 @@ public class UtilStringTest {
 		
 		assertTrue(response.contains("Ana"));
 		assertTrue(response.contains("Antonio"));
+	}
+	
+	@Test
+	public void filterListWithCollectionOfPredicatesUsingAnd() {
+		List<String> names = List.of("Aderbaldo", "Fatima", "Adelbina");
+		List<String> response = UtilString.filterListWithCollectionOfPredicatesUsingAnd(names);
+		
+		assertEquals(2, response.size());
+	
 	}
 }
