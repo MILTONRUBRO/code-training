@@ -220,5 +220,12 @@ public class UtilNumbersTest {
 		String number = UtilNumbers.removeNonNumerics("11#$%11111*&¨1111&*(");
 		assertEquals("11111111111", number);
 	}
+	
+	@Test
+	public void testRemoveDuplicateWithDistinct() {
+		List<Integer> numbers = List.of(1,8, 9, 65,1);
+		List<Integer> response = UtilNumbers.removeDuplicateWithDistinct(numbers);
+		assertEquals(4, response.size());
+	}
 
 }
