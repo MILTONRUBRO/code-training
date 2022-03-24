@@ -191,5 +191,9 @@ public class UtilNumbers {
     	String regex = "-?[^\\d]";
     	return str.replaceAll(regex, "");
     }
+    
+    public static List<Integer> removeDuplicateWithDistinct(List<Integer> numbers) {
+    	return numbers.stream().distinct().collect(Collectors.toList());
+    }
 }
 
