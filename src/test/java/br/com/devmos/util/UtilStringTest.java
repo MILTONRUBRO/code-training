@@ -200,6 +200,11 @@ public class UtilStringTest {
 		List<String> response = UtilString.filterListWithCollectionOfPredicatesUsingAnd(names);
 		
 		assertEquals(2, response.size());
+	}
 	
+	@Test
+	public void testCommonChildString() {
+		String result = UtilString.commonChildString("HARRY","SALLY");
+		assertEquals("AY", result);
 	}
 }

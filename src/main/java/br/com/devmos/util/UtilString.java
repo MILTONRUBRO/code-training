@@ -219,5 +219,16 @@ public class UtilString {
         			.filter(allPredicates.stream().reduce(x -> true, Predicate::and))
         			.collect(Collectors.toList());
     }
+    
+    public static String commonChildString(String str1, String str2) {
+    	var sb = new StringBuilder();
+    	for(int i = 0; i < str1.length(); i++) {
+    		char c = str1.charAt(i);
+    		if(str2.contains(String.valueOf(c))) {
+    			sb.append(c);
+    		}
+    	}
+    	return sb.toString();
+    }
 
 }
