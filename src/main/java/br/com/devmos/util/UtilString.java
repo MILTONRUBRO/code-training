@@ -230,5 +230,11 @@ public class UtilString {
     	}
     	return sb.toString();
     }
+    
+    public static List<String> listWithoutBlank(List<String> list) {
+    	return  list.stream()
+    			  .filter(Predicate.not(String::isBlank))
+    			  .collect(Collectors.toList());
+    }
 
 }
