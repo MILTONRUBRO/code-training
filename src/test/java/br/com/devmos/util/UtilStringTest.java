@@ -207,4 +207,11 @@ public class UtilStringTest {
 		String result = UtilString.commonChildString("HARRY","SALLY");
 		assertEquals("AY", result);
 	}
+	
+	@Test
+	public void testListWithoutBlank() {
+		List<String> names = List.of("jose", " ", "maria");
+		List<String> response = UtilString.listWithoutBlank(names);
+		assertEquals(2, response.size());
+	}
 }
