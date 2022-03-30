@@ -236,5 +236,9 @@ public class UtilString {
     			  .filter(Predicate.not(String::isBlank))
     			  .collect(Collectors.toList());
     }
+    
+    public static String[] simpleListToArray(List<String> list) {
+    	return list.toArray(String[]::new);
+    }
 
 }
