@@ -214,4 +214,11 @@ public class UtilStringTest {
 		List<String> response = UtilString.listWithoutBlank(names);
 		assertEquals(2, response.size());
 	}
+	
+	@Test
+	public void testSimpleListToArray() {
+		List<String> names = List.of("bjorn", "ragnar");
+		String[] response = UtilString.simpleListToArray(names);
+		assertEquals("bjorn", response[0]);
+	}
 }
