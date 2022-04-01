@@ -146,7 +146,7 @@ public class UtilNumbers {
 		int leftSum = 0;
 		int rightSum = 0;
 		
-		for(int row = 0, col = 0; row < arr.size(); row++, col++) {
+		for(int row = 0; row < arr.size(); row++) {
 			leftSum = leftSum + arr.get(row).get(row);
 			rightSum = rightSum + arr.get(row).get(arr.size() - 1 - row);
 		}
