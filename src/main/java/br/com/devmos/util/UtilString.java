@@ -240,5 +240,11 @@ public class UtilString {
     public static String[] simpleListToArray(List<String> list) {
     	return list.toArray(String[]::new);
     }
+    
+    public static long countVowelsWithStream(String str) {
+    	 return str.toLowerCase().chars().mapToObj(i -> (char) i)
+                .filter(c -> "aeiouy".contains(String.valueOf(c)))
+                .count();
+    }
 
 }
