@@ -220,4 +220,12 @@ public class UtilStringTest {
 		String[] response = UtilString.simpleListToArray(names);
 		assertEquals("bjorn", response[0]);
 	}
+	
+	@Test
+	public void testCountVowelsWithStream() {
+		long total = UtilString.countVowelsWithStream(NAME);
+		assertEquals(2, total);
+	}
+	
+	
 }
