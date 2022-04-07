@@ -1,5 +1,8 @@
 package br.com.devmos.util;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -10,13 +13,14 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.Stack;
-import java.util.function.Predicate;
 
 import br.com.devmos.model.Tabela;
 
 
 public class UtilInterviewQuestions {
 	
+	private static final String COMMA_DELIMITER = ";";
+
 	/**
 	 * Dado um array de inteiros
 	 * retorne o indice dos dois elementos que a soma seja igual ao target
@@ -705,5 +709,16 @@ public class UtilInterviewQuestions {
     public static int getAsc(Character c) {
     	return c;
     }
+    
+    public static void readCsv(List<List<String>> records) throws IOException {
+        try (BufferedReader br = new BufferedReader(new FileReader("book.csv"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(COMMA_DELIMITER);
+                records.add(Arrays.asList(values));
+            }
+        }
+    }
+
     
 }
