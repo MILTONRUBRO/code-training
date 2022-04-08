@@ -710,8 +710,8 @@ public class UtilInterviewQuestions {
     	return c;
     }
     
-    public static void readCsv(List<List<String>> records) throws IOException {
-        try (BufferedReader br = new BufferedReader(new FileReader("book.csv"))) {
+    public static void readCsv(List<List<String>> records, String fileName) throws IOException {
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(COMMA_DELIMITER);
