@@ -13,6 +13,8 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.Stack;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import br.com.devmos.model.Tabela;
 
@@ -721,18 +723,25 @@ public class UtilInterviewQuestions {
     }
 
     public static int commonChild(String a, String b){
-        int[][] C = new int[a.length()+1][b.length()+1];
+        int[][] c = new int[a.length()+1][b.length()+1];
 
         for (int i = 0; i < a.length(); i++) {
             for (int j = 0; j < b.length(); j++) {
                 if (a.charAt(i) == b.charAt(j)) {
-                    C[i+1][j+1] = C[i][j] + 1;
+                    c[i+1][j+1] = c[i][j] + 1;
                 } else {
-                    C[i+1][j+1] = Math.max(C[i+1][j], C[i][j+1]);
+                    c[i+1][j+1] = Math.max(c[i+1][j], c[i][j+1]);
                 }
             }
         }
 
-        return C[a.length()][b.length()];
+        return c[a.length()][b.length()];
+    }
+    
+    public List<Integer> findDivisors(int number) {
+    	 return Stream.iterate(1, k -> ++k)
+    	   .limit(number)
+    	   .filter(k -> number % k == 0)
+    	   .collect(Collectors.toList());
     }
 }
