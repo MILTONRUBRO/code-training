@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.Objects;
 import java.util.Set;
 import java.util.Stack;
 import java.util.stream.Collectors;
@@ -749,6 +750,12 @@ public class UtilInterviewQuestions {
       return set1.stream()
           .filter(value -> !set2.contains(value))
           .collect(Collectors.toSet());
+    }
+    
+    public static List<Object> removeNulls(List<Object> list) {
+    	 return list.stream()
+    	 		.filter(Objects::nonNull)
+    	 		.collect(Collectors.toList());
     }
 
 }
