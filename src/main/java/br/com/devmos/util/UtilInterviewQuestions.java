@@ -744,4 +744,11 @@ public class UtilInterviewQuestions {
     	   .filter(k -> number % k == 0)
     	   .collect(Collectors.toList());
     }
+    
+    public  static <T> Set<T> subtract(Set<T> set1, Set<T> set2){
+      return set1.stream()
+          .filter(value -> !set2.contains(value))
+          .collect(Collectors.toSet());
+    }
+
 }
