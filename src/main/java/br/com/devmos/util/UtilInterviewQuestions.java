@@ -757,5 +757,9 @@ public class UtilInterviewQuestions {
     	 		.filter(Objects::nonNull)
     	 		.collect(Collectors.toList());
     }
+    
+    public int booleanPrimitiveToIntTernary(boolean foo) {
+        return (foo) ? 1 : 0;
+    }
 
 }
