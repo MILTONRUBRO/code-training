@@ -221,5 +221,17 @@ public class UtilInterviewQuestionsTest {
 		List<Object> list = UtilInterviewQuestions.removeNulls(names);
 		assertEquals(2, list.size());
 	}
+	
+	@Test
+	public void testBooleanPrimitiveToIntTernaryTrue() {
+		int result = UtilInterviewQuestions.booleanPrimitiveToIntTernary(true);
+		assertEquals(1, result);
+	}
+	
+	@Test
+	public void testBooleanPrimitiveToIntTernaryFalse() {
+		int result = UtilInterviewQuestions.booleanPrimitiveToIntTernary(false);
+		assertEquals(0, result);
+	}
 
 }

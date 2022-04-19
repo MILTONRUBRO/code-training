@@ -758,7 +758,7 @@ public class UtilInterviewQuestions {
     	 		.collect(Collectors.toList());
     }
     
-    public int booleanPrimitiveToIntTernary(boolean foo) {
+    public static int booleanPrimitiveToIntTernary(boolean foo) {
         return (foo) ? 1 : 0;
     }
 
