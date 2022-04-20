@@ -233,5 +233,6 @@ public class UtilInterviewQuestionsTest {
 		int result = UtilInterviewQuestions.booleanPrimitiveToIntTernary(false);
 		assertEquals(0, result);
 	}
+	
 
 }

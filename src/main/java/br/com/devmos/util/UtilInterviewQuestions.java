@@ -3,6 +3,7 @@ package br.com.devmos.util;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -23,6 +24,15 @@ import br.com.devmos.model.Tabela;
 public class UtilInterviewQuestions {
 	
 	private static final String COMMA_DELIMITER = ";";
+	private static long BYTE = 1L;
+	private static long KB = BYTE << 10;
+	private static long MB = KB << 10;
+	private static long GB = MB << 10;
+	private static long TB = GB << 10;
+	private static long PB = TB << 10;
+	private static long EB = PB << 10;
+	private static DecimalFormat DEC_FORMAT = new DecimalFormat("#.##");
+
 
 	/**
 	 * Dado um array de inteiros
@@ -761,5 +771,23 @@ public class UtilInterviewQuestions {
     public static int booleanPrimitiveToIntTernary(boolean foo) {
         return (foo) ? 1 : 0;
     }
+    
+	public static String toHumanReadable(long size) {
+	    if (size < 0) {
+	        throw new IllegalArgumentException("Invalid file size: " + size);
+	    }
+	    if (size >= EB) return formatSize(size, EB, "EB");
+	    if (size >= PB) return formatSize(size, PB, "PB");
+	    if (size >= TB) return formatSize(size, TB, "TB");
+	    if (size >= GB) return formatSize(size, GB, "GB");
+	    if (size >= MB) return formatSize(size, MB, "MB");
+	    if (size >= KB) return formatSize(size, KB, "KB");
+	    return formatSize(size, BYTE, "Bytes");
+	}
+	
+
+	private static String formatSize(long size, long divider, String unitName) {
+	    return DEC_FORMAT.format((double) size / divider) + " " + unitName;
+	}
 
 }
