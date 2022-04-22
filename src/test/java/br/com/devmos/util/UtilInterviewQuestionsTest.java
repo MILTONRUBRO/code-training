@@ -234,5 +234,11 @@ public class UtilInterviewQuestionsTest {
 		assertEquals(0, result);
 	}
 	
+	@Test
+	public void testToHumanReadable() {
+		String humanReadable = UtilInterviewQuestions.toHumanReadable(16);
+		assertEquals("16 Bytes", humanReadable);
+	}
+	
 
 }
