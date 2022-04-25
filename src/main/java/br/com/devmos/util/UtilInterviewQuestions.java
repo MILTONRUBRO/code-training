@@ -789,5 +789,19 @@ public class UtilInterviewQuestions {
 	private static String formatSize(long size, long divider, String unitName) {
 	    return DEC_FORMAT.format((double) size / divider) + " " + unitName;
 	}
+	
+	public static boolean isAutomorphicNumber(int number) {
+	    int square = number * number;
+
+	    while (number > 0) {
+	        if (number % 10 != square % 10) {
+	            return false;
+	        }
+	        number /= 10;
+	        square /= 10;
+	    }
+	    
+	    return true;
+	}
 
 }
