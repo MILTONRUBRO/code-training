@@ -240,5 +240,16 @@ public class UtilInterviewQuestionsTest {
 		assertEquals("16 Bytes", humanReadable);
 	}
 	
+	@Test
+	public void testIsAutomorphicNumberTrue() {
+		boolean automorphicNumber = UtilInterviewQuestions.isAutomorphicNumber(25);
+		assertEquals(true, automorphicNumber);
+	}
+	
+	@Test
+	public void testIsAutomorphicNumberFalse() {
+		boolean automorphicNumber = UtilInterviewQuestions.isAutomorphicNumber(8);
+		assertEquals(false, automorphicNumber);
+	}
 
 }
