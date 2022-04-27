@@ -251,5 +251,11 @@ public class UtilInterviewQuestionsTest {
 		boolean automorphicNumber = UtilInterviewQuestions.isAutomorphicNumber(8);
 		assertEquals(false, automorphicNumber);
 	}
+	
+	@Test
+	public void testToHumanReadableKB() {
+		String humanReadable = UtilInterviewQuestions.toHumanReadable(1024);
+		assertEquals("1 KB", humanReadable);
+	}
 
 }
