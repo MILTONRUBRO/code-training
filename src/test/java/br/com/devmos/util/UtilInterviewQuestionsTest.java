@@ -257,5 +257,12 @@ public class UtilInterviewQuestionsTest {
 		String humanReadable = UtilInterviewQuestions.toHumanReadable(1024);
 		assertEquals("1 KB", humanReadable);
 	}
+	
+	@Test
+	public void testToHumanReadableMB() {
+		String humanReadable = UtilInterviewQuestions.toHumanReadable(100_000_000);
+		assertEquals("95,37 MB", humanReadable);
+	}
+
 
 }
