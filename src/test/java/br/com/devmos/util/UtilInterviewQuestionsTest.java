@@ -263,6 +263,5 @@ public class UtilInterviewQuestionsTest {
 		String humanReadable = UtilInterviewQuestions.toHumanReadable(100_000_000);
 		assertEquals("95,37 MB", humanReadable);
 	}
-
-
+	
 }
