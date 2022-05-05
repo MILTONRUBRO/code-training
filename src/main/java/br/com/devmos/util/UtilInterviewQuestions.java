@@ -818,5 +818,9 @@ public class UtilInterviewQuestions {
 	    }
 	    return escapedData;
 	}
+	
+	public static List<String> findDistinctStrings(List<String> list) {
+		return list.stream().distinct().collect(Collectors.toList());
+	}
 
 }
