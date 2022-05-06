@@ -264,4 +264,10 @@ public class UtilInterviewQuestionsTest {
 		assertEquals("95,37 MB", humanReadable);
 	}
 	
+	@Test
+	public void testFindDistinctStrings() {
+		List<String> list = UtilInterviewQuestions.findDistinctStrings(Arrays.asList("A", "E", "E", "I"));
+		assertEquals(3, list.size());
+	}
+	
 }
