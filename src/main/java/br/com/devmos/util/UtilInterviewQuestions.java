@@ -822,5 +822,9 @@ public class UtilInterviewQuestions {
 	public static List<String> findDistinctStrings(List<String> list) {
 		return list.stream().distinct().collect(Collectors.toList());
 	}
+	
+	public static List<String> toUpper(List<String> list) {
+		return list.stream().map(String::toUpperCase).collect(Collectors.toList());
+	}
 
 }
