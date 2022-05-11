@@ -270,4 +270,11 @@ public class UtilInterviewQuestionsTest {
 		assertEquals(3, list.size());
 	}
 	
+	@Test
+	public void testToUpper() {
+		List<String> letters = UtilInterviewQuestions.toUpper(Arrays.asList("a", "e", "i", "o", "u"));
+		assertTrue(letters.contains("A"));
+	}
+	
+	
 }
