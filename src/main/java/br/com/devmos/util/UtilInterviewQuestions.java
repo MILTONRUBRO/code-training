@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -825,6 +826,13 @@ public class UtilInterviewQuestions {
 	
 	public static List<String> toUpper(List<String> list) {
 		return list.stream().map(String::toUpperCase).collect(Collectors.toList());
+	}
+	
+	public static Map<String, Integer> orderMap(Map<String, Integer> unsortMap) {
+		return unsortMap.entrySet().stream()
+                .sorted(Map.Entry.comparingByKey())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
 	}
 
 }
