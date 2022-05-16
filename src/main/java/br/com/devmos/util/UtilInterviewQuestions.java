@@ -19,6 +19,9 @@ import java.util.Stack;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import com.sun.tools.javac.comp.Todo;
+
+import br.com.devmos.model.Car;
 import br.com.devmos.model.Tabela;
 
 
@@ -833,6 +836,11 @@ public class UtilInterviewQuestions {
                 .sorted(Map.Entry.comparingByKey())
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
                         (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+	}
+
+	public static List<Car> removeData(List<Car> cars) {
+		cars.removeIf(car -> car.getModelo().isBlank());
+		return cars;
 	}
 
 }
