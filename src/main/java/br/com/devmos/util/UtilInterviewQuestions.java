@@ -19,8 +19,6 @@ import java.util.Stack;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import com.sun.tools.javac.comp.Todo;
-
 import br.com.devmos.model.Car;
 import br.com.devmos.model.Tabela;
 
