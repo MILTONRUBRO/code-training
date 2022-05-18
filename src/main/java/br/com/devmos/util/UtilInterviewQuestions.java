@@ -840,5 +840,9 @@ public class UtilInterviewQuestions {
 		cars.removeIf(car -> car.getModelo().isBlank());
 		return cars;
 	}
+	
+	public static int sumWithReduce(int[] numbers) {
+		return  Arrays.stream(numbers).reduce(0, Integer::sum);
+	}
 
 }
