@@ -294,5 +294,12 @@ public class UtilInterviewQuestionsTest {
 		assertEquals(2, list.size());
 
 	}
+	
+	@Test
+	public void testSumWithReduce() {
+		int numbers[] = {1, 5, 4};
+		int sum = UtilInterviewQuestions.sumWithReduce(numbers);
+		assertEquals(10, sum);
+	}
 
 }
