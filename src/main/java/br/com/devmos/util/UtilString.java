@@ -246,5 +246,17 @@ public class UtilString {
                 .filter(c -> "aeiouy".contains(String.valueOf(c)))
                 .count();
     }
+    
+    public static Boolean stringToBoolean(String str) {
+    	switch(str) {
+    	case "S":
+    		return Boolean.TRUE;
+    	case "N":
+    		return Boolean.FALSE;
+    	default:
+    		return Boolean.FALSE;
+
+    	}
+    }
 
 }

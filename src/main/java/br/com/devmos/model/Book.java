@@ -2,6 +2,7 @@ package br.com.devmos.model;
 
 public class Book {
 	
+	private Long id;
     private String name;
     private int releaseYear;
     private String isbn;
@@ -24,7 +25,16 @@ public class Book {
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
-    
-    
+	
+    public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	@Override
+	public String toString() {
+		return "Book [id=" + id + ", name=" + name + ", releaseYear=" + releaseYear + ", isbn=" + isbn + "]";
+	}
 
 }
