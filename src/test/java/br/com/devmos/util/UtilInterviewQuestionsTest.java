@@ -301,5 +301,12 @@ public class UtilInterviewQuestionsTest {
 		int sum = UtilInterviewQuestions.sumWithReduce(numbers);
 		assertEquals(10, sum);
 	}
+	
+	@Test
+	public void testSoma() {
+		int[] numeros = {3, 4, 2};
+		int soma = UtilInterviewQuestions.soma(numeros);
+		assertEquals(9, soma);
+	}
 
 }
