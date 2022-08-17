@@ -258,5 +258,21 @@ public class UtilString {
 
     	}
     }
+    
+    public static boolean isEmpty(final CharSequence cs) {
+        return cs == null || cs.length() == 0;
+   }
+    
+    public static boolean isAnyEmpty(final CharSequence... css) {
+        if (css != null && css.length == 0) {
+              return false;
+        }
+        for (final CharSequence cs : css){
+           if (isEmpty(cs)) {
+                return true;
+           }
+        }
+        return false;
+   }
 
 }
