@@ -287,5 +287,9 @@ public class UtilString {
          }
          return sb.toString();
     }
+    
+    public static String quote( String str) {
+    	 return (str != null ? "'" + str + "'" : null);
+    }
 
 }
