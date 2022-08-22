@@ -293,5 +293,9 @@ public class UtilString {
 			return str.toLowerCase().startsWith(prefix.toLowerCase());
 		}
 	}
+	
+	public static Object quoteIfString( Object obj) {
+	     return (obj instanceof String ? quote((String) obj) : obj);
+	}
 
 }
