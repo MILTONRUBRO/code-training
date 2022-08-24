@@ -297,5 +297,20 @@ public class UtilString {
 	public static Object quoteIfString( Object obj) {
 	     return (obj instanceof String ? quote((String) obj) : obj);
 	}
+	
+	public static boolean endsWithIgnoreCase(String str, String suffix) {
+
+	    if (str == null || suffix == null) {
+	        return false;
+	    }
+	    if (str.endsWith(suffix)) {
+	        return true;
+	    }
+	    if (str.length() < suffix.length()) {
+	        return false;
+	    } else {
+	        return str.toLowerCase().endsWith(suffix.toLowerCase());
+	    }
+	}
 
 }
