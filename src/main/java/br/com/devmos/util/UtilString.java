@@ -330,4 +330,16 @@ public class UtilString {
 	public static boolean isNotBlank(final CharSequence cs) {
 	    return !isBlank(cs);
 	}
+	
+	public static boolean isAnyBlank(final CharSequence... css) {
+	     if (css != null && css.length == 0) {
+	        return false;
+	     }
+	     for (final CharSequence cs : css){
+	        if (isBlank(cs)) {
+	             return true;
+	        }
+	     }
+	     return false;
+	}
 }
