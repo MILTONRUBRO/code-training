@@ -308,5 +308,15 @@ public class UtilInterviewQuestionsTest {
 		int soma = UtilInterviewQuestions.soma(numeros);
 		assertEquals(9, soma);
 	}
+	
+	@Test
+	public void testFindJudge() {
+		
+		int[][] peoples = {{1,3}, {2,3}};
+		
+		int judge = UtilInterviewQuestions.findJudge(3, peoples);
+		assertEquals(3, judge);
+
+	}
 
 }
