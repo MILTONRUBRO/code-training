@@ -930,5 +930,16 @@ public class UtilInterviewQuestions {
         
         return -1;
     }
+    
+    public static Map<String, String> arrayToMap(String[][] array) {
+        Map<String, String> map = new HashMap<String, String>();
+
+        for (String[] pair : array) {
+             if (pair.length > 1) {
+                 map.put(pair[0], pair[1]);
+             }
+        }
+        return map;
+    }
 
 }
