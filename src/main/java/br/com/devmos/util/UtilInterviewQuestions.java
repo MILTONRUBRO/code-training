@@ -932,7 +932,7 @@ public class UtilInterviewQuestions {
     }
     
     public static Map<String, String> arrayToMap(String[][] array) {
-        Map<String, String> map = new HashMap<String, String>();
+        Map<String, String> map = new HashMap<>();
 
         for (String[] pair : array) {
              if (pair.length > 1) {
