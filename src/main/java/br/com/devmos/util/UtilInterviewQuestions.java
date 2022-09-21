@@ -941,5 +941,36 @@ public class UtilInterviewQuestions {
         }
         return map;
     }
+    
+    public static Map<Character, Character> montaTabela(String str) {
+    	Map<Character, Character> tabela = new HashMap<>();
+    	int count = 97;
+    	
+    	for(char c : str.toCharArray()) {
+    		if(c == ' ') continue;
+    		
+    		if(!tabela.containsKey(c)) {
+        		tabela.put(c, (char) count);
+        		count++;
+    		}
+    	}
+    	    	
+    	return tabela;
+    }
+    
+    public static String decifraMensagem(String chave, String mensagem) {
+    	
+    	StringBuilder sb = new StringBuilder();
+    	Map<Character, Character> tabela = montaTabela(chave);
+    	
+    	for(char c : mensagem.toCharArray()) {
+    		if(c == ' ')sb.append(" ");
+    		
+    		if(tabela.containsKey(c)) {
+    			sb.append(tabela.get(c));
+    		}
+    	}
+    	return sb.toString();
+    }
 
 }

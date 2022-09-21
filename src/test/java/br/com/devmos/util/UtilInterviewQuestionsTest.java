@@ -3,11 +3,13 @@ package br.com.devmos.util;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Test;
 
@@ -317,6 +319,47 @@ public class UtilInterviewQuestionsTest {
 		int judge = UtilInterviewQuestions.findJudge(3, peoples);
 		assertEquals(3, judge);
 
+	}
+	
+	@Test
+	public void testMontaTabela() {
+		Map<Character, Character> montaTabela = UtilInterviewQuestions.montaTabela("eljuxhpwnyrdgtqkviszcfmabo");
+		assertNotNull(montaTabela);
+	}
+	
+	@Test
+	public void testDecifraMensagem() {
+		String mensagem = UtilInterviewQuestions.decifraMensagem("eljuxhpwnyrdgtqkviszcfmabo", 
+				"zwx hnfx lqantp mnoeius ycgk vcnjrdb");
+		
+		assertEquals("the five boxing wizards jump quickly", mensagem);
+	}
+	
+	
+	@Test
+	public void testReverseString() {
+		char[] c = {'h','e','l','l'};
+		
+		/*int i = 0;
+		int j = c.length-1;
+		char temp = ' ';
+		
+		while(i <= j) {
+			
+			temp = c[i];
+			c[i] = c[j];
+			c[j] = temp;
+			i++;
+			j--;
+		}*/
+		char temp = ' ';
+		for(int i = 0, j = c.length - 1; i <= j; i++, j--) {
+			temp = c[i];
+			c[i] = c[j];
+			c[j] = temp;
+		}
+		
+		System.out.println(c);
 	}
 
 }
