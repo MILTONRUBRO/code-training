@@ -972,5 +972,15 @@ public class UtilInterviewQuestions {
     	}
     	return sb.toString();
     }
+    
+    public static char[] reverseArrayChar(char[] c) {
+		char temp;
+		for(int i = 0, j = c.length - 1; i <= j; i++, j--) {
+			temp = c[i];
+			c[i] = c[j];
+			c[j] = temp;
+		}
+		return c;
+    }
 
 }

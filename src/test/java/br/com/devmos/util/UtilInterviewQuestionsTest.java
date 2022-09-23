@@ -339,15 +339,8 @@ public class UtilInterviewQuestionsTest {
 	@Test
 	public void testReverseString() {
 		char[] c = {'h','e','l','l'};
-		
-		char temp = ' ';
-		for(int i = 0, j = c.length - 1; i <= j; i++, j--) {
-			temp = c[i];
-			c[i] = c[j];
-			c[j] = temp;
-		}
-		
-		System.out.println(c);
+		c = UtilInterviewQuestions.reverseArrayChar(c);
+		assertEquals('l', c[0]);
 	}
 
 }
