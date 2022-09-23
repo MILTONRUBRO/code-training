@@ -340,18 +340,6 @@ public class UtilInterviewQuestionsTest {
 	public void testReverseString() {
 		char[] c = {'h','e','l','l'};
 		
-		/*int i = 0;
-		int j = c.length-1;
-		char temp = ' ';
-		
-		while(i <= j) {
-			
-			temp = c[i];
-			c[i] = c[j];
-			c[j] = temp;
-			i++;
-			j--;
-		}*/
 		char temp = ' ';
 		for(int i = 0, j = c.length - 1; i <= j; i++, j--) {
 			temp = c[i];
