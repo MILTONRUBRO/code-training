@@ -982,5 +982,19 @@ public class UtilInterviewQuestions {
 		}
 		return c;
     }
+    
+	public static boolean valueOfCheesBorder(String coordenada ) {
+		char letter = coordenada.charAt(0);
+		Integer position  = Integer.valueOf(coordenada.charAt(1));
+		
+		if((letter == 'a' || letter == 'c' || letter == 'e' ||  letter == 'g')) {
+			if(position % 2 != 0) return false;
+			return true;
+		}else if((letter == 'b' || letter == 'd' || letter == 'f' ||  letter == 'h')) {
+			if(position % 2 != 0) return true;
+			return false;
+		}
+		return false;
+	}
 
 }

@@ -8,8 +8,10 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.junit.Test;
 
@@ -342,5 +344,12 @@ public class UtilInterviewQuestionsTest {
 		c = UtilInterviewQuestions.reverseArrayChar(c);
 		assertEquals('l', c[0]);
 	}
+	
+	@Test
+	public void testCheesBorder() {
+		boolean result = UtilInterviewQuestions.valueOfCheesBorder("a1");
+		assertEquals(Boolean.FALSE, result);
+	}
+
 
 }
