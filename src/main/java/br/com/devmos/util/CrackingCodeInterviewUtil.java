@@ -3,9 +3,9 @@ package br.com.devmos.util;
 public class CrackingCodeInterviewUtil {
 	
 	/**
-	 * O(n)
+	 * time complexity O(n)
 	 * @param words
-	 * @return
+	 * @return string
 	 */
 	public static String joinWords(String[] words) {
 		StringBuilder sb = new StringBuilder();
