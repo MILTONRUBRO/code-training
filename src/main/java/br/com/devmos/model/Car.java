@@ -11,7 +11,8 @@ public class Car {
 		this.cor = Objects.requireNonNull(cor, "A cor do carro não pode ser nulla");
 		this.modelo = Objects.requireNonNull(modelo, "O modelo do carro não pode ser nullo");
 	}
-
+	
+	
 	public String getCor() {
 		return cor;
 	}
