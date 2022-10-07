@@ -1,5 +1,8 @@
 package br.com.devmos.model;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTree {
 	
     Node root;
@@ -37,6 +40,30 @@ public class BinaryTree {
     
     public boolean containsNode(int value) {
         return containsNodeRecursive(root, value);
+    }
+    
+    public void breadthFirstSearch() {
+        if (root == null) {
+            return;
+        }
+
+        Queue<Node> nodes = new LinkedList<>();
+        nodes.add(root);
+
+        while (!nodes.isEmpty()) {
+
+            Node node = nodes.remove();
+
+            System.out.print(" " + node.value);
+
+            if (node.left != null) {
+                nodes.add(node.left);
+            }
+
+            if (node.right != null) {
+                nodes.add(node.right);
+            }
+        }
     }
 	
 	class Node {
