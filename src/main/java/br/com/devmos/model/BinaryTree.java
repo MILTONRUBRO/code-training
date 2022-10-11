@@ -65,6 +65,14 @@ public class BinaryTree {
             }
         }
     }
+    
+    public void traverseInOrder(Node node) {
+        if (node != null) {
+            traverseInOrder(node.left);
+            System.out.print(" " + node.value);
+            traverseInOrder(node.right);
+        }
+    }
 	
 	class Node {
         int value;
