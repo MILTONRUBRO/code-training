@@ -73,6 +73,10 @@ public class BinaryTree {
             traverseInOrder(node.right);
         }
     }
+    
+    public int findSmallestValue(Node root) {
+        return root.left == null ? root.value : findSmallestValue(root.left);
+    }
 	
 	class Node {
         int value;
