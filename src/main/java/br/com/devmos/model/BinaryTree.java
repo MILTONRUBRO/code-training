@@ -77,6 +77,18 @@ public class BinaryTree {
     public int findSmallestValue(Node root) {
         return root.left == null ? root.value : findSmallestValue(root.left);
     }
+    
+    public boolean isEmpty() {
+        return root == null;
+    }
+
+    public int getSize() {
+        return getSizeRecursive(root);
+    }
+
+    private int getSizeRecursive(Node current) {
+        return current == null ? 0 : getSizeRecursive(current.left) + 1 + getSizeRecursive(current.right);
+    }
 	
 	class Node {
         int value;
