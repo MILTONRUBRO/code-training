@@ -1,6 +1,4 @@
-package br.com.devmos.util;
-
-import br.com.devmos.model.Node;
+package br.com.devmos.model;
 
 public class LinkedList<E> {
 	

@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Test;
 
+import br.com.devmos.model.LinkedList;
+
 public class LinkedListTest {
 
 	@Test
