@@ -7,8 +7,10 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -1035,6 +1037,16 @@ public class UtilInterviewQuestions {
         }
         
         return result;
+    }
+	
+
+    
+    public void iteratoArrayDeque(Deque<String> dq) {
+        for (Iterator itr = dq.iterator(); itr.hasNext();) {
+       	 
+            // Print the elements
+            System.out.print(itr.next() + " ");
+        }
     }
 
 }
