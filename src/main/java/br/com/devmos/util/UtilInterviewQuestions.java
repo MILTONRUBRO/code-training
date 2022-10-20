@@ -1040,7 +1040,10 @@ public class UtilInterviewQuestions {
     }
 	
 
-    
+    /**
+     * iterator a deque
+     * @param dq
+     */
     public void iteratoArrayDeque(Deque<String> dq) {
         for (Iterator itr = dq.iterator(); itr.hasNext();) {
        	 
