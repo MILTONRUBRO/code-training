@@ -1053,6 +1053,11 @@ public class UtilInterviewQuestions {
         }
     }
     
+    /**
+     *  sum of a binary tree
+     * @param root
+     * @return
+     */
     public static int sumBinaryTree(Node root){
         int sum = 0;
  
@@ -1075,7 +1080,8 @@ public class UtilInterviewQuestions {
     
     static class Node {
         int key;
-        Node left, right;
+        Node left; 
+        Node right;
     }
 
 }
