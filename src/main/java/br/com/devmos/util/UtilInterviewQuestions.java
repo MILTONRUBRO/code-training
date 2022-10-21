@@ -24,6 +24,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import br.com.devmos.model.Car;
+import br.com.devmos.model.Node;
 import br.com.devmos.model.Tabela;
 
 public class UtilInterviewQuestions {
@@ -1050,6 +1051,31 @@ public class UtilInterviewQuestions {
             // Print the elements
             System.out.print(itr.next() + " ");
         }
+    }
+    
+    public static int sumBinaryTree(Node root){
+        int sum = 0;
+ 
+        Queue<Node> list = new LinkedList<>();
+        list.add(root);
+ 
+        while (!list.isEmpty()) {
+            Node temp = list.poll();
+            sum += temp.key;
+ 
+            if (temp.left != null) {
+            	list.add(temp.left);
+            }
+            if (temp.right != null) {
+            	list.add(temp.right);
+            }
+        }
+        return sum;
+    }
+    
+    static class Node {
+        int key;
+        Node left, right;
     }
 
 }
