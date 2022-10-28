@@ -1090,5 +1090,15 @@ public class UtilInterviewQuestions {
         StringBuilder reverse = plain.reverse();
         return (reverse.toString()).equals(clean);
     }
+    
+    public boolean isPalindromeReverseTheString(String text) {
+        StringBuilder reverse = new StringBuilder();
+        String clean = text.replaceAll("\\s+", "").toLowerCase();
+        char[] plain = clean.toCharArray();
+        for (int i = plain.length - 1; i >= 0; i--) {
+            reverse.append(plain[i]);
+        }
+        return (reverse.toString()).equals(clean);
+    }
 
 }
