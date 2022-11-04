@@ -21,6 +21,7 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import br.com.devmos.model.Car;
@@ -1113,6 +1114,12 @@ public class UtilInterviewQuestions {
                 return false;
         }
         return true;
+    }
+    
+    public boolean isPalindromeUsingIntStream(String text) {
+        String temp  = text.replaceAll("\\s+", "").toLowerCase();
+        return IntStream.range(0, temp.length() / 2)
+          .noneMatch(i -> temp.charAt(i) != temp.charAt(temp.length() - i - 1));
     }
 
 }
