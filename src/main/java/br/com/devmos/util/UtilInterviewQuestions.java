@@ -1137,7 +1137,6 @@ public class UtilInterviewQuestions {
         if (forward < backward + 1) {
             return recursivePalindrome(text, forward + 1, backward - 1);
         }
-
         return true;
     }
 
