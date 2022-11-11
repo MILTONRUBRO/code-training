@@ -350,6 +350,11 @@ public class UtilInterviewQuestionsTest {
 		boolean result = UtilInterviewQuestions.valueOfCheesBorder("a1");
 		assertEquals(Boolean.FALSE, result);
 	}
-
+	
+	@Test
+	public void testPrintBinary() {
+		String binary = UtilInterviewQuestions.printBinary(.125);
+		assertEquals(".001", binary);
+	}
 
 }
