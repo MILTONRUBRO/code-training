@@ -8,10 +8,8 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import org.junit.Test;
 
@@ -354,7 +352,7 @@ public class UtilInterviewQuestionsTest {
 	@Test
 	public void testPrintBinary() {
 		String binary = UtilInterviewQuestions.printBinary(.125);
-		assertEquals(".001", binary);
+		assertEquals("devem ser iguais", ".001", binary);
 	}
 
 }
