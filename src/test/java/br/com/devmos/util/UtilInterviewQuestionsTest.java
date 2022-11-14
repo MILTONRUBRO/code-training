@@ -354,5 +354,7 @@ public class UtilInterviewQuestionsTest {
 		String binary = UtilInterviewQuestions.printBinary(.125);
 		assertEquals("devem ser iguais", ".001", binary);
 	}
+	
+	
 
 }
