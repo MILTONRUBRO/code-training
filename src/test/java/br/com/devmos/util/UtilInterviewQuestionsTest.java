@@ -355,6 +355,11 @@ public class UtilInterviewQuestionsTest {
 		assertEquals("devem ser iguais", ".001", binary);
 	}
 	
-	
+	@Test
+	public void testRunFamilies() {
+		double result = UtilInterviewQuestions.runFamilies(15);
+		assertNotNull("resultado não deve ser nulo", result);
+
+	}
 
 }
