@@ -358,7 +358,7 @@ public class UtilInterviewQuestionsTest {
 	@Test
 	public void testRunFamilies() {
 		double result = UtilInterviewQuestions.runFamilies(15);
-		assertNotNull("resultado não deve ser nulo", result);
+		assertTrue(result > 0);
 
 	}
 
