@@ -3,6 +3,7 @@ package br.com.devmos.util;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -1102,7 +1103,7 @@ public class UtilInterviewQuestions {
         return (reverse.toString()).equals(clean);
     }
     
-    public boolean isPalindrome(String text) {
+    public static boolean isPalindrome(String text) {
         String clean = text.replaceAll("\\s+", "").toLowerCase();
         int length = clean.length();
         int forward = 0;
@@ -1116,18 +1117,18 @@ public class UtilInterviewQuestions {
         return true;
     }
     
-    public boolean isPalindromeUsingIntStream(String text) {
+    public static boolean isPalindromeUsingIntStream(String text) {
         String temp  = text.replaceAll("\\s+", "").toLowerCase();
         return IntStream.range(0, temp.length() / 2)
           .noneMatch(i -> temp.charAt(i) != temp.charAt(temp.length() - i - 1));
     }
     
-    public boolean isPalindromeRecursive(String text){
+    public static boolean isPalindromeRecursive(String text){
         String clean = text.replaceAll("\\s+", "").toLowerCase();
         return recursivePalindrome(clean,0,clean.length()-1);
     }
 
-    private boolean recursivePalindrome(String text, int forward, int backward) {
+    private static boolean recursivePalindrome(String text, int forward, int backward) {
         if (forward == backward) {
             return true;
         }

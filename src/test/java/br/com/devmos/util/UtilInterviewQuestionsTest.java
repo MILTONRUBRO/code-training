@@ -359,7 +359,12 @@ public class UtilInterviewQuestionsTest {
 	public void testRunFamilies() {
 		double result = UtilInterviewQuestions.runFamilies(15);
 		assertTrue(result > 0);
-
+	}
+	
+	@Test
+	public void testIsPalindromeRecursive() {
+		boolean result = UtilInterviewQuestions.isPalindromeRecursive("ovo");
+		assertTrue(result);
 	}
 
 }
