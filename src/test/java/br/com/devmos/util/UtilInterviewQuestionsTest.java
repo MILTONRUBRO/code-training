@@ -362,6 +362,12 @@ public class UtilInterviewQuestionsTest {
 	}
 	
 	@Test
+	public void testIsPalindrome() {
+		boolean result = UtilInterviewQuestions.isPalindrome("ovo");
+		assertTrue(result);
+	}
+	
+	@Test
 	public void testIsPalindromeRecursive() {
 		boolean result = UtilInterviewQuestions.isPalindromeRecursive("ovo");
 		assertTrue(result);
