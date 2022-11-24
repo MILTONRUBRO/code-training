@@ -378,5 +378,12 @@ public class UtilInterviewQuestionsTest {
 		boolean result = UtilInterviewQuestions.isPalindromeRecursive("teste");
 		assertFalse(result);
 	}
+	
+	@Test
+	public void testIsPalindromeReverseTheString() {
+		boolean result = UtilInterviewQuestions.isPalindromeReverseTheString("ana");
+		assertTrue(result);
+
+	}
 
 }

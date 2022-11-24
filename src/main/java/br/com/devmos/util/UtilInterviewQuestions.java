@@ -1093,7 +1093,7 @@ public class UtilInterviewQuestions {
         return (reverse.toString()).equals(clean);
     }
     
-    public boolean isPalindromeReverseTheString(String text) {
+    public static boolean isPalindromeReverseTheString(String text) {
         StringBuilder reverse = new StringBuilder();
         String clean = text.replaceAll("\\s+", "").toLowerCase();
         char[] plain = clean.toCharArray();
