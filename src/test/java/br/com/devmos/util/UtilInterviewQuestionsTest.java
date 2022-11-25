@@ -385,5 +385,11 @@ public class UtilInterviewQuestionsTest {
 		assertTrue(result);
 
 	}
+	
+	@Test
+	public void testIsPalindromeUsingStringBuilder() {
+		boolean result = UtilInterviewQuestions.isPalindromeUsingStringBuilder("nnaann");
+		assertTrue(result);
+	}
 
 }
