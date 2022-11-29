@@ -383,13 +383,18 @@ public class UtilInterviewQuestionsTest {
 	public void testIsPalindromeReverseTheString() {
 		boolean result = UtilInterviewQuestions.isPalindromeReverseTheString("ana");
 		assertTrue(result);
-
 	}
 	
 	@Test
 	public void testIsPalindromeUsingStringBuilder() {
 		boolean result = UtilInterviewQuestions.isPalindromeUsingStringBuilder("nnaann");
 		assertTrue(result);
+	}
+	
+	@Test
+	public void testIsPalindromeReverseTheStringFalse() {
+		boolean result = UtilInterviewQuestions.isPalindromeReverseTheString("ana");
+		assertFalse(result);
 	}
 
 }
