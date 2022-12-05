@@ -1208,5 +1208,41 @@ public class UtilInterviewQuestions {
 		
 		return false;
 	}
+	
+	/**
+	 * hackerank apples and oranges
+	 */
+    public static void countApplesAndOranges(int s, int t, int a, int b, List<Integer> apples, List<Integer> oranges) {        
+        // s inicio casa | t fim da casa
+        // a = arvore maca 
+        // b arvore laranjas
+        
+        int macaCaiu = 0;
+        int laranjaCaiu = 0;
+        int totalMacas = 0;
+        int totalLaranjas = 0;
+        
+        for (int i = 0; i < apples.size(); i++) {
+           macaCaiu = a + apples.get(i);
+           
+           if(macaCaiu >= s && macaCaiu <= t){
+               totalMacas++;
+           }
+        }
+        
+        for (int i = 0; i < oranges.size(); i++) {
+           laranjaCaiu = b + oranges.get(i);
+           
+           if(laranjaCaiu >= s && laranjaCaiu <= t){
+               totalLaranjas++;
+           }
+        }
+        
+        System.out.println(totalMacas);
+        System.out.println(totalLaranjas);
+
+    }
+
+}
 
 }
