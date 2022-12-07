@@ -1244,5 +1244,3 @@ public class UtilInterviewQuestions {
     }
 
 }
-
-}

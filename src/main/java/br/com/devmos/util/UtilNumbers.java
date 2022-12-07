@@ -70,6 +70,12 @@ public class UtilNumbers {
 		return maxSum;
 	}
 	
+	/**
+	 * 
+	 *	1221 Primo Rapido beecrowd
+	 * @param number
+	 * @return
+	 */
 	public static boolean isPrime(int number) {
 		if(number <= 1)
 			return false;
