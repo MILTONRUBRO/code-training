@@ -72,7 +72,7 @@ public class UtilNumbers {
 	
 	/**
 	 * 
-	 *	1221 Primo Rapido beecrowd
+	 *	1221 Primo Rapido Beecrowd
 	 * @param number
 	 * @return
 	 */
