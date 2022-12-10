@@ -1242,5 +1242,12 @@ public class UtilInterviewQuestions {
         System.out.println(totalLaranjas);
 
     }
+    
+    public static int fatorialRecursivo(int num){
+    	   if((num==1) || (num==0))
+    	      return 1;
+    	   else
+    	      return fatorialRecursivo(num-1) * num;
+    }
 
 }
