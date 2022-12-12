@@ -1249,5 +1249,14 @@ public class UtilInterviewQuestions {
     	   else
     	      return fatorialRecursivo(num-1) * num;
     }
+    
+    /**
+     * PROBLEMA:3046  Domino
+     * @param pecas
+     * @return
+     */
+    public static int pecasDominos(int pecas) {
+    	return ((pecas + 1) * (pecas + 2))/2;
+    }
 
 }
