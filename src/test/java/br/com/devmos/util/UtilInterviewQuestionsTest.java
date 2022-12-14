@@ -393,8 +393,13 @@ public class UtilInterviewQuestionsTest {
 	
 	@Test
 	public void testIsPalindromeReverseTheStringFalse() {
-		boolean result = UtilInterviewQuestions.isPalindromeReverseTheString("ana");
+		boolean result = UtilInterviewQuestions.isPalindromeReverseTheString("anad");
 		assertFalse(result);
 	}
-
+	
+	@Test
+	public void testPecasDominos() {
+		int result = UtilInterviewQuestions.pecasDominos(6);
+		assertEquals(28, result);
+	}
 }
