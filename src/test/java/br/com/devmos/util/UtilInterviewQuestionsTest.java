@@ -402,4 +402,10 @@ public class UtilInterviewQuestionsTest {
 		int result = UtilInterviewQuestions.pecasDominos(6);
 		assertEquals(28, result);
 	}
+	
+	@Test
+	public void testfatorialRecursivo() {
+		int result = UtilInterviewQuestions.fatorialRecursivo(3);
+		assertEquals(6, result);
+	}
 }
