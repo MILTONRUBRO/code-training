@@ -95,6 +95,12 @@ public class UtilNumbersTest {
 	}
 	
 	@Test
+	public void testIsPrimeFalse() {
+		boolean prime = UtilNumbers.isPrime(4);
+		assertEquals(false, prime);
+	}
+	
+	@Test
 	public void testGetPotencia() {
 		Double result = UtilNumbers.getPotencia(2.0, 3.0);
 		assertEquals(8.0, result, 0.001);
