@@ -8,6 +8,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -27,6 +28,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import br.com.devmos.model.Car;
+import br.com.devmos.model.Kid;
 import br.com.devmos.model.Tabela;
 
 public class UtilInterviewQuestions {
@@ -1257,6 +1259,22 @@ public class UtilInterviewQuestions {
      */
     public static int pecasDominos(int pecas) {
     	return ((pecas + 1) * (pecas + 2))/2;
+    }
+    
+    /**
+     * CHRISTMAS CONTEST 2022
+     * Rota de Papai Noel
+     * @param kids
+     * @return
+     */
+    public static List<String> routeOfGifts(List<Kid> kids){
+    	 return kids.stream()
+    			   .sorted(Comparator.comparing(Kid::getRegion)
+    					   			 .thenComparingInt(Kid::getDistance)
+    					   			 .thenComparing(Kid::getName, Comparator.naturalOrder()))
+    			   .map(Kid::getName)
+    			   .collect(Collectors.toList());
+    					   			 		   
     }
 
 }

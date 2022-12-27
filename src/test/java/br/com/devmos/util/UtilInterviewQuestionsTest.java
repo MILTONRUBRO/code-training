@@ -14,6 +14,7 @@ import java.util.Map;
 import org.junit.Test;
 
 import br.com.devmos.model.Car;
+import br.com.devmos.model.Kid;
 
 public class UtilInterviewQuestionsTest {
 
@@ -407,5 +408,23 @@ public class UtilInterviewQuestionsTest {
 	public void testfatorialRecursivo() {
 		int result = UtilInterviewQuestions.fatorialRecursivo(3);
 		assertEquals(6, result);
+	}
+	
+	@Test
+	public void testRouteOfGifts() {
+		
+		List<Kid> kids = new ArrayList<>();
+		
+		kids.add(new Kid("Samuel", "O", 1));
+		kids.add(new Kid("Fabricio", "L", 1));
+		kids.add(new Kid("Antonieta", "L", 1));
+		kids.add(new Kid("Emanuel", "S", 30));
+		kids.add(new Kid("Kaio", "S", 20));
+		kids.add(new Kid("Hugo", "N", 90));
+		
+		List<String> names = UtilInterviewQuestions.routeOfGifts(kids);
+		
+		System.out.println(names);
+		assertEquals("Antonieta", names.get(0));
 	}
 }
