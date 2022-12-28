@@ -424,7 +424,12 @@ public class UtilInterviewQuestionsTest {
 		
 		List<String> names = UtilInterviewQuestions.routeOfGifts(kids);
 		
-		System.out.println(names);
 		assertEquals("Antonieta", names.get(0));
+	}
+	
+	@Test
+	public void testReplaceWords() {
+		String removeWords = UtilInterviewQuestions.replaceWords("O blue blueberry blues ablue");
+		System.out.println(removeWords);
 	}
 }

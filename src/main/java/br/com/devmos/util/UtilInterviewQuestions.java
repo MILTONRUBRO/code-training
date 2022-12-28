@@ -27,6 +27,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import br.com.devmos.model.Book;
 import br.com.devmos.model.Car;
 import br.com.devmos.model.Kid;
 import br.com.devmos.model.Tabela;
@@ -1276,5 +1277,8 @@ public class UtilInterviewQuestions {
     			   .collect(Collectors.toList());
     					   			 		   
     }
-
+    
+   public static String replaceWords(String str) {
+	   return str.replaceAll("\\bblue\\b", "azul").replaceAll("\\bred\\b", "vermelho");
+   }
 }
