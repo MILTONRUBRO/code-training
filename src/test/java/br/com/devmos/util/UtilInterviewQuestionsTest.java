@@ -432,4 +432,16 @@ public class UtilInterviewQuestionsTest {
 		String removeWords = UtilInterviewQuestions.replaceWords("O blue blueberry blues ablue");
 		System.out.println(removeWords);
 	}
+	
+	@Test
+	public void testValidPasswordOk() {
+		String pass = UtilInterviewQuestions.validPassword("password");
+		assertEquals("Senha valida", pass);
+	}
+	
+	@Test
+	public void testValidPasswordNotOk() {
+		String pass = UtilInterviewQuestions.validPassword("pass");
+		assertEquals("Senha invalida", pass);
+	}
 }
