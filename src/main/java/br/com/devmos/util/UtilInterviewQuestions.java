@@ -917,7 +917,7 @@ public class UtilInterviewQuestions {
 	}
 	
 	/**
-	 * In a town, there are n people labeled from 1 to n. There is a rumor that one of these people is secretly the town judge.
+	 *  In a town, there are n people labeled from 1 to n. There is a rumor that one of these people is secretly the town judge.
 		If the town judge exists, then:
 		The town judge trusts nobody.
 		Everybody (except for the town judge) trusts the town judge.
@@ -1059,7 +1059,7 @@ public class UtilInterviewQuestions {
     }
     
     /**
-     *  sum of a binary tree
+     *  sum of a binary tree 
      * @param root
      * @return
      */
