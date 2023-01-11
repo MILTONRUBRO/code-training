@@ -444,4 +444,11 @@ public class UtilInterviewQuestionsTest {
 		String pass = UtilInterviewQuestions.validPassword("pass");
 		assertEquals("Senha invalida", pass);
 	}
+	
+	@Test
+	public void testLessThanThree() {
+		var numbers = List.of(10, 2, 5, 1);
+		List<Integer> result = UtilInterviewQuestions.lessThanThree(numbers);
+		assertTrue(result.contains(2));
+	}
 }
