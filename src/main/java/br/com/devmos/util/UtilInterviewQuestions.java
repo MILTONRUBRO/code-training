@@ -1281,4 +1281,14 @@ public class UtilInterviewQuestions {
    public static String replaceWords(String str) {
 	   return str.replaceAll("\\bblue\\b", "azul").replaceAll("\\bred\\b", "vermelho");
    }
+   
+   public static List<Integer> lessThanThree(List<Integer> numbers){
+	   return numbers.stream()
+	           .filter((Integer number) -> {
+	               return number < 3;
+	           })
+	           .collect(Collectors.toList());
+   }
+   
+
 }
