@@ -1290,5 +1290,19 @@ public class UtilInterviewQuestions {
 	           .collect(Collectors.toList());
    }
    
+   /**
+    * Problema: 1581 Conversa Internacional
+    * @param languages
+    * @return
+    */
+   public static String  internationalTalk(List<String> languages) {
+	   Set<String> response = new HashSet<>(languages);
+	   
+	   if(response.size() > 1) {
+		   return "ingles";
+	   }
+	   
+	  return response.stream().findFirst().orElse("not found");
+   }
 
 }
