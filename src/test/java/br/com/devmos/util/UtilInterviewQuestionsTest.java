@@ -451,4 +451,18 @@ public class UtilInterviewQuestionsTest {
 		List<Integer> result = UtilInterviewQuestions.lessThanThree(numbers);
 		assertTrue(result.contains(2));
 	}
+	
+	@Test
+	public void testInternationalTalkEnglishAnswer() {
+		var languages = List.of("portugues", "chines", "portugues");
+		String language = UtilInterviewQuestions.internationalTalk(languages);
+		assertEquals("ingles", language);
+	}
+	
+	@Test
+	public void testInternationalTalkLanguage() {
+		var languages = List.of("portugues", "portugues");
+		String language = UtilInterviewQuestions.internationalTalk(languages);
+		assertEquals("portugues", language);
+	}
 }
