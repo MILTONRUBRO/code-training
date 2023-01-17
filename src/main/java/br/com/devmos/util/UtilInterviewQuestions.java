@@ -1304,5 +1304,19 @@ public class UtilInterviewQuestions {
 	   
 	  return response.stream().findFirst().orElse("not found");
    }
+   
+   public static List<Integer> computePondSizes(int[][] land) {
+	   List<Integer> pondSizes = new ArrayList<>();
+	   
+	   for(int i = 0; i < land.length; i++) {
+		   for(int j = 0; j < land[i].length; j++) {
+			   if(land[i][j] == 0) {
+				   int size = 0;
+				   pondSizes.add(size);
+			   }
+		   }
+	   }
+	   return pondSizes;
+   }
 
 }
