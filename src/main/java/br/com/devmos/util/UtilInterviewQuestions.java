@@ -1318,5 +1318,21 @@ public class UtilInterviewQuestions {
 	   }
 	   return pondSizes;
    }
+   
+   public static int computeSize(int land[][], int row, int col) {
+	   if(row < 0 || col < 0 || row >= land.length || col >= land[row].length 
+			   || land[row][col] != 0) {
+		   return 0;
+	   }
+	   int size  = 1;
+	   land[row][col] = -1;
+	   
+	   for(int dr = -1; dr <= 1; dr++) {
+		   for(int dc = -1; dc <= 1; dc++) {
+			   size += computeSize(land, row + dr, col + dc);
+		   }
+	   }
+	   return size;
+   }
 
 }
