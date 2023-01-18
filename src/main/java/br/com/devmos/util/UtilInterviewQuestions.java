@@ -1284,9 +1284,7 @@ public class UtilInterviewQuestions {
    
    public static List<Integer> lessThanThree(List<Integer> numbers){
 	   return numbers.stream()
-	           .filter((Integer number) -> {
-	               return number < 3;
-	           })
+	           .filter( n -> n < 3)
 	           .collect(Collectors.toList());
    }
    
