@@ -3,6 +3,7 @@ package br.com.devmos.util;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.security.SecureRandom;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -1331,6 +1332,10 @@ public class UtilInterviewQuestions {
 		   }
 	   }
 	   return size;
+   }
+   
+   public static String convertDouble(double value) {
+	   return BigDecimal.valueOf(value).toPlainString();
    }
 
 }

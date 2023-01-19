@@ -465,4 +465,11 @@ public class UtilInterviewQuestionsTest {
 		String language = UtilInterviewQuestions.internationalTalk(languages);
 		assertEquals("portugues", language);
 	}
+	
+	@Test
+	public void testConvertDouble() {
+		String result = UtilInterviewQuestions.convertDouble(150000000.89);
+		assertNotNull(result);
+	}
+	
 }
