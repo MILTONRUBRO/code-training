@@ -469,6 +469,7 @@ public class UtilInterviewQuestionsTest {
 	@Test
 	public void testConvertDouble() {
 		String result = UtilInterviewQuestions.convertDouble(150000000.89);
+		System.out.println(result);
 		assertNotNull(result);
 	}
 	
