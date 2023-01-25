@@ -15,6 +15,7 @@ import java.util.Set;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class UtilString {
 
@@ -354,6 +355,15 @@ public class UtilString {
 	        }
 	    }
 	    return true;
+	    
+	    
+	}
+	
+	public static boolean isVowelStream(Character c) {
+		Set<Character> set = Stream.of('a', 'e', 'i', 'o', 'u')
+				  .collect(Collectors.toCollection(HashSet::new));
+		
+		return set.contains(c);
 	}
 	
 
