@@ -366,5 +366,15 @@ public class UtilString {
 		return set.contains(c);
 	}
 	
+	public static void frequenceLetters(String str) {
+		
+		Map<Character, Integer> tabela = new HashMap<>();
+		
+		//percorrer string
+		//adicionar cada valor no hashmap
+		//caso já exista incremente 
+		
+	}
+	
 
 }
