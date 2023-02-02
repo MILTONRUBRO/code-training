@@ -366,14 +366,21 @@ public class UtilString {
 		return set.contains(c);
 	}
 	
-	public static void frequenceLetters(String str) {
+	public static Map<Character, Integer> frequenceLetters(String str) {
 		
 		Map<Character, Integer> tabela = new HashMap<>();
 		
-		//percorrer string
-		//adicionar cada valor no hashmap
-		//caso já exista incremente 
+		for(int i = 0; i < str.length(); i++) {
+			Character c = str.charAt(i);
+			
+			if(!tabela.containsKey(c)) {
+				tabela.put(c, 1);
+			}else {
+				tabela.put(c, tabela.get(c) + 1);
+			}
+		}
 		
+		return tabela;
 	}
 	
 
