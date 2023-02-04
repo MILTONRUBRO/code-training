@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.junit.Test;
@@ -225,6 +226,12 @@ public class UtilStringTest {
 	public void testCountVowelsWithStream() {
 		long total = UtilString.countVowelsWithStream(NAME);
 		assertEquals(2, total);
+	}
+	
+	@Test
+	public void testFrequenceLetters() {
+		Map<Character, Integer> result = UtilString.frequenceLetters(NAME);
+		System.out.println(result);
 	}
 	
 	

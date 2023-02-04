@@ -371,7 +371,7 @@ public class UtilString {
 		Map<Character, Integer> tabela = new HashMap<>();
 		
 		for(int i = 0; i < str.length(); i++) {
-			Character c = str.charAt(i);
+			Character c = str.toLowerCase().trim().charAt(i);
 			
 			if(!tabela.containsKey(c)) {
 				tabela.put(c, 1);
