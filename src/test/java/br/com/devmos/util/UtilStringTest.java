@@ -234,13 +234,4 @@ public class UtilStringTest {
 		System.out.println(result);
 	}
 	
-	//TODO
-	//criar hashmap de 
-	/*
-	 * 
-	 * Elogios: Rolien
-		Bugs: Naej
-		Dúvidas: Elehcim
-		Sugestões: Odranoel
-	 */
 }
