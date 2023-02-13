@@ -472,4 +472,10 @@ public class UtilInterviewQuestionsTest {
 		assertNotNull(result);
 	}
 	
+	@Test
+	public void testFeedback() {
+		String person = UtilInterviewQuestions.feedback(2);
+		assertEquals("Naej", person);
+	}
+	
 }

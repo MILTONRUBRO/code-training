@@ -382,23 +382,5 @@ public class UtilString {
 		
 		return tabela;
 	}
-	
-	/**
-	 * Problema: 1546 Feedback
-	 * @return 
-	 * 
-	 */
-	public static String feedback(int key) {
-		Map<Integer, String> responsaveis = new HashMap<>();
-		
-		responsaveis.put(1, "Rolien");
-		responsaveis.put(2, "Naej");
-		responsaveis.put(3, "Elehcim");
-		responsaveis.put(4, "Odranoel");
-		
-		return responsaveis.getOrDefault(key, "");
-		
-	}
-	
 
 }
