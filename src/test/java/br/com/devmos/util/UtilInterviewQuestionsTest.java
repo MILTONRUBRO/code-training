@@ -478,4 +478,10 @@ public class UtilInterviewQuestionsTest {
 		assertEquals("Naej", person);
 	}
 	
+	@Test
+	public void testFeedbackDefault() {
+		String person = UtilInterviewQuestions.feedback(0);
+		assertEquals("", person);
+	}
+	
 }
