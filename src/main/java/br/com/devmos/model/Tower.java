@@ -2,7 +2,6 @@ package br.com.devmos.model;
 
 import java.util.Stack;
 
-import br.com.devmos.util.Tower;
 
 public class Tower {
 	private Stack<Integer> disks;
