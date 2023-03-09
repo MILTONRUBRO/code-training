@@ -1354,5 +1354,26 @@ public class UtilInterviewQuestions {
 		return responsaveis.getOrDefault(key, "");
 		
 	}
+	
+	/**
+	 * Problema: 3358 Sobrenome Não é Fácil
+	 * @return 
+	 * 
+	 */
+	public static boolean sobrenomeDificil(String sobrenome) {
+		int count = 0;
+		
+		for (int i = 0; i < sobrenome.length(); i++) {
+			char letra = sobrenome.charAt(i);
+			
+			if(!UtilString.isVowelStream(letra)) {
+				count++;
+			}else {
+				count = 0;
+			}
+		}
+		return count >= 3;
+		
+	}
 
 }
