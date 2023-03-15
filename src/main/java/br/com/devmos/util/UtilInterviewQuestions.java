@@ -1373,7 +1373,6 @@ public class UtilInterviewQuestions {
 			}
 		}
 		return count >= 3;
-		
 	}
 
 }

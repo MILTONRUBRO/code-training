@@ -484,4 +484,10 @@ public class UtilInterviewQuestionsTest {
 		assertEquals("", person);
 	}
 	
+	@Test
+	public void testSobrenomeDificil() {
+		boolean result = UtilInterviewQuestions.sobrenomeDificil("Schwarzenegger");
+		assertFalse(result);
+	}
+	
 }
