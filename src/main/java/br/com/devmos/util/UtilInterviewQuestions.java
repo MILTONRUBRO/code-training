@@ -24,6 +24,7 @@ import java.util.Queue;
 import java.util.Random;
 import java.util.Set;
 import java.util.Stack;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -906,250 +907,257 @@ public class UtilInterviewQuestions {
 		}
 		return index;
 	}
-	
+
 	public static int soma(int[] numeros) {
 		int soma = 0;
-		
-		for(int i = 0; i < numeros.length; i++) {
+
+		for (int i = 0; i < numeros.length; i++) {
 			soma += numeros[i];
 		}
-		
+
 		return soma;
 	}
-	
+
 	/**
-	 *  In a town, there are n people labeled from 1 to n. There is a rumor that one of these people is secretly the town judge.
-		If the town judge exists, then:
-		The town judge trusts nobody.
-		Everybody (except for the town judge) trusts the town judge.
-		here is exactly one person that satisfies properties 1 and 2.
+	 * In a town, there are n people labeled from 1 to n. There is a rumor that one
+	 * of these people is secretly the town judge. If the town judge exists, then:
+	 * The town judge trusts nobody. Everybody (except for the town judge) trusts
+	 * the town judge. here is exactly one person that satisfies properties 1 and 2.
+	 * 
 	 * @param n
 	 * @param trust
 	 * @return
 	 */
-    public static int findJudge(int n, int[][] trust){
-        int[] count = new int[n+1];
-        
-        for(int[] t : trust){
-            count[t[0]]--;
-            count[t[1]]++;
-        }
-        
-        for(int i = 1; i <= n; i++){
-            if(count[i] == n-1) return i;
-        }
-        
-        return -1;
-    }
-    
-    public static Map<String, String> arrayToMap(String[][] array) {
-        Map<String, String> map = new HashMap<>();
+	public static int findJudge(int n, int[][] trust) {
+		int[] count = new int[n + 1];
 
-        for (String[] pair : array) {
-             if (pair.length > 1) {
-                 map.put(pair[0], pair[1]);
-             }
-        }
-        return map;
-    }
-    
-    public static Map<Character, Character> montaTabela(String str) {
-    	Map<Character, Character> tabela = new HashMap<>();
-    	int count = 97;
-    	
-    	for(char c : str.toCharArray()) {
-    		if(c == ' ') continue;
-    		
-    		if(!tabela.containsKey(c)) {
-        		tabela.put(c, (char) count);
-        		count++;
-    		}
-    	}
-    	    	
-    	return tabela;
-    }
-    
-    public static String decifraMensagem(String chave, String mensagem) {
-    	
-    	StringBuilder sb = new StringBuilder();
-    	Map<Character, Character> tabela = montaTabela(chave);
-    	
-    	for(char c : mensagem.toCharArray()) {
-    		if(c == ' ')sb.append(" ");
-    		
-    		if(tabela.containsKey(c)) {
-    			sb.append(tabela.get(c));
-    		}
-    	}
-    	return sb.toString();
-    }
-    
-    public static char[] reverseArrayChar(char[] c) {
+		for (int[] t : trust) {
+			count[t[0]]--;
+			count[t[1]]++;
+		}
+
+		for (int i = 1; i <= n; i++) {
+			if (count[i] == n - 1)
+				return i;
+		}
+
+		return -1;
+	}
+
+	public static Map<String, String> arrayToMap(String[][] array) {
+		Map<String, String> map = new HashMap<>();
+
+		for (String[] pair : array) {
+			if (pair.length > 1) {
+				map.put(pair[0], pair[1]);
+			}
+		}
+		return map;
+	}
+
+	public static Map<Character, Character> montaTabela(String str) {
+		Map<Character, Character> tabela = new HashMap<>();
+		int count = 97;
+
+		for (char c : str.toCharArray()) {
+			if (c == ' ')
+				continue;
+
+			if (!tabela.containsKey(c)) {
+				tabela.put(c, (char) count);
+				count++;
+			}
+		}
+
+		return tabela;
+	}
+
+	public static String decifraMensagem(String chave, String mensagem) {
+
+		StringBuilder sb = new StringBuilder();
+		Map<Character, Character> tabela = montaTabela(chave);
+
+		for (char c : mensagem.toCharArray()) {
+			if (c == ' ')
+				sb.append(" ");
+
+			if (tabela.containsKey(c)) {
+				sb.append(tabela.get(c));
+			}
+		}
+		return sb.toString();
+	}
+
+	public static char[] reverseArrayChar(char[] c) {
 		char temp;
-		for(int i = 0, j = c.length - 1; i <= j; i++, j--) {
+		for (int i = 0, j = c.length - 1; i <= j; i++, j--) {
 			temp = c[i];
 			c[i] = c[j];
 			c[j] = temp;
 		}
 		return c;
-    }
-    
-	public static boolean valueOfCheesBorder(String coordenada ) {
+	}
+
+	public static boolean valueOfCheesBorder(String coordenada) {
 		char letter = coordenada.charAt(0);
-		Integer position  = Integer.valueOf(coordenada.charAt(1));
-		
-		if((letter == 'a' || letter == 'c' || letter == 'e' ||  letter == 'g')) {
-			if(position % 2 != 0) return false;
+		Integer position = Integer.valueOf(coordenada.charAt(1));
+
+		if ((letter == 'a' || letter == 'c' || letter == 'e' || letter == 'g')) {
+			if (position % 2 != 0)
+				return false;
 			return true;
-		}else if((letter == 'b' || letter == 'd' || letter == 'f' ||  letter == 'h')) {
-			if(position % 2 != 0) return true;
+		} else if ((letter == 'b' || letter == 'd' || letter == 'f' || letter == 'h')) {
+			if (position % 2 != 0)
+				return true;
 			return false;
 		}
 		return false;
 	}
-	
+
 	/**
 	 * leetcode 102
+	 * 
 	 * @param root
 	 * @return
 	 */
 	public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> result = new ArrayList<>();
-        
-        if (root == null) {
-            return result;
-        }
-        
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);
-        
-        while (!queue.isEmpty()) {
-            int levelSize = queue.size();
-            List<Integer> level = new ArrayList<>();
-            
-            for (int i = 0; i < levelSize; i++) {
-                TreeNode node = queue.poll();
-                level.add(node.val);
-                
-                if (node.left != null) {
-                    queue.offer(node.left);
-                }
-                
-                if (node.right != null) {
-                    queue.offer(node.right);
-                }                
-            }    
-            
-            result.add(level);
-        }
-        
-        return result;
-    }
-	
+		List<List<Integer>> result = new ArrayList<>();
 
-    /**
-     * iterator a deque
-     * @param dq
-     */
-    public void iteratoArrayDeque(Deque<String> dq) {
-        for (Iterator itr = dq.iterator(); itr.hasNext();) {
-       	 
-            // Print the elements
-            System.out.print(itr.next() + " ");
-        }
-    }
-    
-    /**
-     *  sum of a binary tree 
-     * @param root
-     * @return
-     */
-    public static int sumBinaryTree(Node root){
-        int sum = 0;
- 
-        Queue<Node> list = new LinkedList<>();
-        list.add(root);
- 
-        while (!list.isEmpty()) {
-            Node temp = list.poll();
-            sum += temp.key;
- 
-            if (temp.left != null) {
-            	list.add(temp.left);
-            }
-            if (temp.right != null) {
-            	list.add(temp.right);
-            }
-        }
-        return sum;
-    }
-    
-    static class Node {
-        int key;
-        Node left; 
-        Node right;
-    }
-    
-    public static boolean isPalindromeUsingStringBuilder(String text) {
-        String clean = text.replaceAll("\\s+", "").toLowerCase();
-        StringBuilder plain = new StringBuilder(clean);
-        StringBuilder reverse = plain.reverse();
-        return (reverse.toString()).equals(clean);
-    }
-    
-    public static boolean isPalindromeReverseTheString(String text) {
-        StringBuilder reverse = new StringBuilder();
-        String clean = text.replaceAll("\\s+", "").toLowerCase();
-        char[] plain = clean.toCharArray();
-        for (int i = plain.length - 1; i >= 0; i--) {
-            reverse.append(plain[i]);
-        }
-        return (reverse.toString()).equals(clean);
-    }
-    
-    public static boolean isPalindrome(String text) {
-        String clean = text.replaceAll("\\s+", "").toLowerCase();
-        int length = clean.length();
-        int forward = 0;
-        int backward = length - 1;
-        while (backward > forward) {
-            char forwardChar = clean.charAt(forward++);
-            char backwardChar = clean.charAt(backward--);
-            if (forwardChar != backwardChar)
-                return false;
-        }
-        return true;
-    }
-    
-    public static boolean isPalindromeUsingIntStream(String text) {
-        String temp  = text.replaceAll("\\s+", "").toLowerCase();
-        return IntStream.range(0, temp.length() / 2)
-          .noneMatch(i -> temp.charAt(i) != temp.charAt(temp.length() - i - 1));
-    }
-    
-    public static boolean isPalindromeRecursive(String text){
-        String clean = text.replaceAll("\\s+", "").toLowerCase();
-        return recursivePalindrome(clean,0,clean.length()-1);
-    }
+		if (root == null) {
+			return result;
+		}
 
-    private static boolean recursivePalindrome(String text, int forward, int backward) {
-        if (forward == backward) {
-            return true;
-        }
-        if ((text.charAt(forward)) != (text.charAt(backward))) {
-            return false;
-        }
-        if (forward < backward + 1) {
-            return recursivePalindrome(text, forward + 1, backward - 1);
-        }
-        return true;
-    }
-    
+		Queue<TreeNode> queue = new LinkedList<>();
+		queue.offer(root);
+
+		while (!queue.isEmpty()) {
+			int levelSize = queue.size();
+			List<Integer> level = new ArrayList<>();
+
+			for (int i = 0; i < levelSize; i++) {
+				TreeNode node = queue.poll();
+				level.add(node.val);
+
+				if (node.left != null) {
+					queue.offer(node.left);
+				}
+
+				if (node.right != null) {
+					queue.offer(node.right);
+				}
+			}
+
+			result.add(level);
+		}
+
+		return result;
+	}
+
+	/**
+	 * iterator a deque
+	 * 
+	 * @param dq
+	 */
+	public void iteratoArrayDeque(Deque<String> dq) {
+		for (Iterator itr = dq.iterator(); itr.hasNext();) {
+
+			// Print the elements
+			System.out.print(itr.next() + " ");
+		}
+	}
+
+	/**
+	 * sum of a binary tree
+	 * 
+	 * @param root
+	 * @return
+	 */
+	public static int sumBinaryTree(Node root) {
+		int sum = 0;
+
+		Queue<Node> list = new LinkedList<>();
+		list.add(root);
+
+		while (!list.isEmpty()) {
+			Node temp = list.poll();
+			sum += temp.key;
+
+			if (temp.left != null) {
+				list.add(temp.left);
+			}
+			if (temp.right != null) {
+				list.add(temp.right);
+			}
+		}
+		return sum;
+	}
+
+	static class Node {
+		int key;
+		Node left;
+		Node right;
+	}
+
+	public static boolean isPalindromeUsingStringBuilder(String text) {
+		String clean = text.replaceAll("\\s+", "").toLowerCase();
+		StringBuilder plain = new StringBuilder(clean);
+		StringBuilder reverse = plain.reverse();
+		return (reverse.toString()).equals(clean);
+	}
+
+	public static boolean isPalindromeReverseTheString(String text) {
+		StringBuilder reverse = new StringBuilder();
+		String clean = text.replaceAll("\\s+", "").toLowerCase();
+		char[] plain = clean.toCharArray();
+		for (int i = plain.length - 1; i >= 0; i--) {
+			reverse.append(plain[i]);
+		}
+		return (reverse.toString()).equals(clean);
+	}
+
+	public static boolean isPalindrome(String text) {
+		String clean = text.replaceAll("\\s+", "").toLowerCase();
+		int length = clean.length();
+		int forward = 0;
+		int backward = length - 1;
+		while (backward > forward) {
+			char forwardChar = clean.charAt(forward++);
+			char backwardChar = clean.charAt(backward--);
+			if (forwardChar != backwardChar)
+				return false;
+		}
+		return true;
+	}
+
+	public static boolean isPalindromeUsingIntStream(String text) {
+		String temp = text.replaceAll("\\s+", "").toLowerCase();
+		return IntStream.range(0, temp.length() / 2)
+				.noneMatch(i -> temp.charAt(i) != temp.charAt(temp.length() - i - 1));
+	}
+
+	public static boolean isPalindromeRecursive(String text) {
+		String clean = text.replaceAll("\\s+", "").toLowerCase();
+		return recursivePalindrome(clean, 0, clean.length() - 1);
+	}
+
+	private static boolean recursivePalindrome(String text, int forward, int backward) {
+		if (forward == backward) {
+			return true;
+		}
+		if ((text.charAt(forward)) != (text.charAt(backward))) {
+			return false;
+		}
+		if (forward < backward + 1) {
+			return recursivePalindrome(text, forward + 1, backward - 1);
+		}
+		return true;
+	}
+
 	public static String printBinary(double num) {
 		if (num >= 1 || num <= 0) {
 			return "ERROR";
 		}
-	
+
 		StringBuilder binary = new StringBuilder();
 		binary.append(".");
 		while (num > 0) {
@@ -1167,12 +1175,12 @@ public class UtilInterviewQuestions {
 		}
 		return binary.toString();
 	}
-	
+
 	public static double runFamilies(int n) {
 		int boys = 0;
 		int girls = 0;
-		
-		for(int i = 0; i < n; i++) {
+
+		for (int i = 0; i < n; i++) {
 			int[] genders = runOneFamily();
 			girls += genders[0];
 			boys += genders[1];
@@ -1184,195 +1192,219 @@ public class UtilInterviewQuestions {
 		Random random = new Random();
 		int boys = 0;
 		int girls = 0;
-		
-		while(girls == 0) {
-			if(random.nextBoolean()) {
+
+		while (girls == 0) {
+			if (random.nextBoolean()) {
 				girls += 1;
-			}else {
+			} else {
 				boys += 1;
 			}
 		}
-		int[] genders = {girls, boys};
+		int[] genders = { girls, boys };
 		return genders;
 	}
-	
+
 	public static boolean findElement(int[][] matrix, int elem) {
 		int row = 0;
 		int col = matrix[0].length - 1;
-		
-		while(row < matrix.length && col >= 0) {
-			if(matrix[row][col] == elem) {
+
+		while (row < matrix.length && col >= 0) {
+			if (matrix[row][col] == elem) {
 				return true;
-			}else if(matrix[row][col] > elem) {
+			} else if (matrix[row][col] > elem) {
 				col--;
-			}else {
+			} else {
 				row++;
 			}
 		}
-		
+
 		return false;
 	}
-	
+
 	/**
 	 * hackerank apples and oranges
 	 */
-    public static void countApplesAndOranges(int s, int t, int a, int b, List<Integer> apples, List<Integer> oranges) {        
-        // s inicio casa | t fim da casa
-        // a = arvore maca 
-        // b arvore laranjas
-        
-        int macaCaiu = 0;
-        int laranjaCaiu = 0;
-        int totalMacas = 0;
-        int totalLaranjas = 0;
-        
-        for (int i = 0; i < apples.size(); i++) {
-           macaCaiu = a + apples.get(i);
-           
-           if(macaCaiu >= s && macaCaiu <= t){
-               totalMacas++;
-           }
-        }
-        
-        for (int i = 0; i < oranges.size(); i++) {
-           laranjaCaiu = b + oranges.get(i);
-           
-           if(laranjaCaiu >= s && laranjaCaiu <= t){
-               totalLaranjas++;
-           }
-        }
-        
-        System.out.println(totalMacas);
-        System.out.println(totalLaranjas);
+	public static void countApplesAndOranges(int s, int t, int a, int b, List<Integer> apples, List<Integer> oranges) {
+		// s inicio casa | t fim da casa
+		// a = arvore maca
+		// b arvore laranjas
 
-    }
-    
-    public static int fatorialRecursivo(int num){
-    	   if((num==1) || (num==0))
-    	      return 1;
-    	   else
-    	      return fatorialRecursivo(num-1) * num;
-    }
-    
-    /**
-     * PROBLEMA:3046  Domino
-     * @param pecas
-     * @return
-     */
-    public static int pecasDominos(int pecas) {
-    	return ((pecas + 1) * (pecas + 2))/2;
-    }
-    
-    /**
-     * CHRISTMAS CONTEST 2022
-     * Rota de Papai Noel
-     * @param kids
-     * @return
-     */
-    public static List<String> routeOfGifts(List<Kid> kids){
-    	 return kids.stream()
-    			   .sorted(Comparator.comparing(Kid::getRegion)
-    					   			 .thenComparingInt(Kid::getDistance)
-    					   			 .thenComparing(Kid::getName, Comparator.naturalOrder()))
-    			   .map(Kid::getName)
-    			   .collect(Collectors.toList());
-    					   			 		   
-    }
-    
-   public static String replaceWords(String str) {
-	   return str.replaceAll("\\bblue\\b", "azul").replaceAll("\\bred\\b", "vermelho");
-   }
-   
-   public static List<Integer> lessThanThree(List<Integer> numbers){
-	   return numbers.stream()
-	           .filter( n -> n < 3)
-	           .collect(Collectors.toList());
-   }
-   
-   /**
-    * Problema: 1581 Conversa Internacional
-    * @param languages
-    * @return
-    */
-   public static String  internationalTalk(List<String> languages) {
-	   Set<String> response = new HashSet<>(languages);
-	   
-	   if(response.size() > 1) {
-		   return "ingles";
-	   }
-	   
-	  return response.stream().findFirst().orElse("not found");
-   }
-   
-   public static List<Integer> computePondSizes(int[][] land) {
-	   List<Integer> pondSizes = new ArrayList<>();
-	   
-	   for(int i = 0; i < land.length; i++) {
-		   for(int j = 0; j < land[i].length; j++) {
-			   if(land[i][j] == 0) {
-				   int size = 0;
-				   pondSizes.add(size);
-			   }
-		   }
-	   }
-	   return pondSizes;
-   }
-   
-   public static int computeSize(int land[][], int row, int col) {
-	   if(row < 0 || col < 0 || row >= land.length || col >= land[row].length 
-			   || land[row][col] != 0) {
-		   return 0;
-	   }
-	   int size  = 1;
-	   land[row][col] = -1;
-	   
-	   for(int dr = -1; dr <= 1; dr++) {
-		   for(int dc = -1; dc <= 1; dc++) {
-			   size += computeSize(land, row + dr, col + dc);
-		   }
-	   }
-	   return size;
-   }
-   
-   public static String convertDouble(double value) {
-	   return BigDecimal.valueOf(value).toPlainString();
-   }
-   
+		int macaCaiu = 0;
+		int laranjaCaiu = 0;
+		int totalMacas = 0;
+		int totalLaranjas = 0;
+
+		for (int i = 0; i < apples.size(); i++) {
+			macaCaiu = a + apples.get(i);
+
+			if (macaCaiu >= s && macaCaiu <= t) {
+				totalMacas++;
+			}
+		}
+
+		for (int i = 0; i < oranges.size(); i++) {
+			laranjaCaiu = b + oranges.get(i);
+
+			if (laranjaCaiu >= s && laranjaCaiu <= t) {
+				totalLaranjas++;
+			}
+		}
+
+		System.out.println(totalMacas);
+		System.out.println(totalLaranjas);
+
+	}
+
+	public static int fatorialRecursivo(int num) {
+		if ((num == 1) || (num == 0))
+			return 1;
+		else
+			return fatorialRecursivo(num - 1) * num;
+	}
+
+	/**
+	 * PROBLEMA:3046 Domino
+	 * 
+	 * @param pecas
+	 * @return
+	 */
+	public static int pecasDominos(int pecas) {
+		return ((pecas + 1) * (pecas + 2)) / 2;
+	}
+
+	/**
+	 * CHRISTMAS CONTEST 2022 Rota de Papai Noel
+	 * 
+	 * @param kids
+	 * @return
+	 */
+	public static List<String> routeOfGifts(List<Kid> kids) {
+		return kids.stream()
+				.sorted(Comparator.comparing(Kid::getRegion).thenComparingInt(Kid::getDistance)
+						.thenComparing(Kid::getName, Comparator.naturalOrder()))
+				.map(Kid::getName).collect(Collectors.toList());
+
+	}
+
+	public static String replaceWords(String str) {
+		return str.replaceAll("\\bblue\\b", "azul").replaceAll("\\bred\\b", "vermelho");
+	}
+
+	public static List<Integer> lessThanThree(List<Integer> numbers) {
+		return numbers.stream().filter(n -> n < 3).collect(Collectors.toList());
+	}
+
+	/**
+	 * Problema: 1581 Conversa Internacional
+	 * 
+	 * @param languages
+	 * @return
+	 */
+	public static String internationalTalk(List<String> languages) {
+		Set<String> response = new HashSet<>(languages);
+
+		if (response.size() > 1) {
+			return "ingles";
+		}
+
+		return response.stream().findFirst().orElse("not found");
+	}
+
+	public static List<Integer> computePondSizes(int[][] land) {
+		List<Integer> pondSizes = new ArrayList<>();
+
+		for (int i = 0; i < land.length; i++) {
+			for (int j = 0; j < land[i].length; j++) {
+				if (land[i][j] == 0) {
+					int size = 0;
+					pondSizes.add(size);
+				}
+			}
+		}
+		return pondSizes;
+	}
+
+	public static int computeSize(int land[][], int row, int col) {
+		if (row < 0 || col < 0 || row >= land.length || col >= land[row].length || land[row][col] != 0) {
+			return 0;
+		}
+		int size = 1;
+		land[row][col] = -1;
+
+		for (int dr = -1; dr <= 1; dr++) {
+			for (int dc = -1; dc <= 1; dc++) {
+				size += computeSize(land, row + dr, col + dc);
+			}
+		}
+		return size;
+	}
+
+	public static String convertDouble(double value) {
+		return BigDecimal.valueOf(value).toPlainString();
+	}
+
 	/**
 	 * Problema: 1546 Feedback
-	 * @return 
+	 * 
+	 * @return
 	 * 
 	 */
 	public static String feedback(int key) {
 		Map<Integer, String> responsaveis = new HashMap<>();
-		
+
 		responsaveis.put(1, "Rolien");
 		responsaveis.put(2, "Naej");
 		responsaveis.put(3, "Elehcim");
 		responsaveis.put(4, "Odranoel");
-		
+
 		return responsaveis.getOrDefault(key, "");
-		
+
 	}
-	
+
 	/**
 	 * Problema: 3358 Sobrenome Não é Fácil
-	 * @return 
+	 * 
+	 * @return
 	 * 
 	 */
 	public static boolean sobrenomeDificil(String sobrenome) {
 		int count = 0;
-		
+
 		for (int i = 0; i < sobrenome.length(); i++) {
 			char letra = sobrenome.charAt(i);
-			
-			if(!UtilString.isVowelStream(letra)) {
+
+			if (!UtilString.isVowelStream(letra)) {
 				count++;
-			}else {
+			} else {
 				count = 0;
 			}
 		}
 		return count >= 3;
+	}
+
+	public static String validaArquivos(List<String> obrigatorios, List<String> enviados) {
+		StringBuilder sb = new StringBuilder();
+
+		for (String obrigatorio : obrigatorios) {
+
+			for (String enviado : enviados) {
+				if (obrigatorio.contains(enviado)) {
+
+				}
+				if (!enviados.contains(obrigatorio)) {
+					sb.append("Deve Anexar o arquivo com a extensão ").append(obrigatorio).append("/n");
+				}
+			}
+
+		}
+		System.out.println(sb.toString());
+		return sb.toString();
+	}
+
+	public static List<Car> filters(List<Car> cars) {
+		return cars.stream().filter(car -> car.getCor().equals("verde"))
+							.filter(car -> car.getModelo().equals("civic"))
+							.collect(Collectors.toList());
 	}
 
 }
