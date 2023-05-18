@@ -490,4 +490,12 @@ public class UtilInterviewQuestionsTest {
 		assertFalse(result);
 	}
 	
+	@Test
+	public void testFilters() {
+		List<Car> cars = List.of(new Car("verde", "civic"), new Car("azul","civic"));
+		List<Car> carsFiltered = UtilInterviewQuestions.filters(cars);
+		assertEquals(1, carsFiltered.size());
+	}
+	
+	
 }
